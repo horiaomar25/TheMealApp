@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import Image from 'next/image';
+
 
 const FetchCategories = () => {
   const [categories, setCategories] = useState([]);
