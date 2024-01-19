@@ -50,14 +50,20 @@ const MealList = ({ selectedCategory }) => {
             in a string that can be displayed using string literal. */
         const ingredient = mealDetails[`strIngredient${i}`];
         const measure = mealDetails[`strMeasure${i}`];
-
+        
+        /* Checks if the ingredient is truthy and if its trimmed version is not an empty string. 
+            Ensures that empty string is not considered. */
         if (ingredient && ingredient.trim() !== '') {
+          // If ingredient is truthy then it will be pushed to the ingredient array that was initialized on line 43.
           ingredients.push(`${measure} ${ingredient}`);
         } else {
+          // If ingredient is false/empty string, the loop will exit if there are more than 20 ingredient.
           break;
         }
       }
 
+      /* Takes the selectedMeal state variable which was initalized as null. The spread operator adds the mealDetails
+         object and the ingredient array. The loop stops either when there are no more ingredients or when an empty ingredient is encountered. */
       setSelectedMeal({
         ...mealDetails,
         ingredients,
@@ -68,6 +74,10 @@ const MealList = ({ selectedCategory }) => {
     }
   };
 
+  /* checks whether selectedCategory has a truthy value. fetchMeal function only runs if 
+     selectedCategory has a value. Will then fetch meals based on the selected Category. useEffect
+     will only run when the selectedCategory changes. 
+      */
   useEffect(() => {
     if (selectedCategory) {
       fetchMeals();
