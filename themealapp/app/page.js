@@ -1,27 +1,27 @@
 "use client"
+import { useState } from 'react'
 import FetchCategories from "./API/FetchCategories"
 import Categories from "./Components/Categories"
 import SearchInput from "./Components/SearchInput"
 import Hero from "./Components/Hero"
 import Navigation from "./Components/Navigation"
+import MealList from "./Components/MealList"
 
 
 export default function Home() {
-  const {categories} = FetchCategories()
+  const { categories } = FetchCategories();
+  const [selectedCategory, setSelectedCategory] = useState('');
 
-  
+  const handleCategoryClick = (category) => {
+    setSelectedCategory(category);
+  };
+
   return (
     <>
     <Navigation/>
     <Hero/>
- 
-    <div>
-      
-        <Categories key={categories.idCategory} categories={categories} />
-        
-    
-    </div>
+      <Categories categories={categories} onSelectCategory={handleCategoryClick} />
+      <MealList selectedCategory={selectedCategory} />
     </>
-  )
-    
-}
+  );
+};

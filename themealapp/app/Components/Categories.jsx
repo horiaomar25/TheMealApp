@@ -1,8 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
-"use client";
-import React from "react";
+import React from 'react';
 
-const Categories = ({ categories }) => {
+const Categories = ({ categories, onSelectCategory }) => {
   const chunkArray = (array, chunkSize) => {
     const result = [];
     for (let i = 0; i < array.length; i += chunkSize) {
@@ -15,14 +14,17 @@ const Categories = ({ categories }) => {
 
   return (
     <>
-      <section className="m-6 border bg-custom-background ">
+      <section className="m-6 border">
         {chunkedCategories.map((row, rowIndex) => (
           <div key={rowIndex} className="flex">
             {row.map((category) => (
-              <div key={category.idCategory} className="border w-1/2 m-6 flex flex-col p-2 justify-center items-center">
+              <div
+                key={category.idCategory}
+                className="border w-1/2 m-6 flex flex-col p-2 justify-center items-center cursor-pointer"
+                onClick={() => onSelectCategory(category.strCategory)}
+              >
                 <p>{category.strCategory}</p>
                 <img src={category.strCategoryThumb} alt="category picture" width={300} />
-               
               </div>
             ))}
           </div>
@@ -33,4 +35,3 @@ const Categories = ({ categories }) => {
 };
 
 export default Categories;
-
