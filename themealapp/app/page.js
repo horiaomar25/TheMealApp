@@ -1,4 +1,4 @@
-"use client";
+"use client"
 // Import the necessary modules
 import { useState, useEffect } from "react";
 import { createClient } from "@supabase/supabase-js";
@@ -31,7 +31,14 @@ export default function Home() {
   }, []);
 
   if (!session) {
-    return <Auth supabaseClient={supabase} appearance={{ theme: ThemeSupa }} />;
+    return (
+      <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
+        <div style={{ width: '300px', padding: '20px', border: '1px solid #ccc', borderRadius: '8px', boxShadow: '0 0 10px rgba(0, 0, 0, 0.1)' }}>
+          <h2 style={{ textAlign: 'center', marginBottom: '20px' }}>Login</h2>
+          <Auth supabaseClient={supabase} appearance={{ theme: ThemeSupa }} />
+        </div>
+      </div>
+    );
   } else {
     // Redirect to "/home" when logged in
     router.push("/home");
