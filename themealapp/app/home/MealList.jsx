@@ -3,6 +3,11 @@ import React, { useState, useEffect } from 'react';
 const MealList = ({ selectedCategory }) => {
   const [meals, setMeals] = useState([]);
   const [selectedMeal, setSelectedMeal] = useState(null);
+  const [ visible, setVisible] = useState(true)
+
+  const handleClick = () => {
+    setVisible(!visible)
+  }
 
   /* A fetch request to TheMealAPI to retrieve meals carry the same category as the category clicked on.  */
   const fetchMeals = async () => {
@@ -84,33 +89,51 @@ const MealList = ({ selectedCategory }) => {
     }
   }, [selectedCategory]);
 
+  const chunkArray = (array, chunkSize) => {
+    const result = [];
+    for (let i = 0; i < array.length; i += chunkSize) {
+      result.push(array.slice(i, i + chunkSize));
+    }
+    return result;
+  };
+
+  const chunkedMeals = chunkArray(meals, 3);
+
   return (
     <>
-      <section className="m-6 border">
-        {meals.map((meal) => (
-          <div
-            key={meal.idMeal}
-            className="border w-1/2 m-6 flex flex-col p-2 justify-center items-center cursor-pointer"
-            onClick={() => fetchMealDetails(meal.idMeal)}
-          >
-            <p>{meal.strMeal}</p>
-            <img src={meal.strMealThumb} alt="meal picture" width={300} />
-          </div>
-        ))}
-      </section>
-
-      {selectedMeal && (
-        <section className="m-6 border">
-          <div className="border w-full m-6 flex flex-col p-2 justify-center items-center">
-            <p>{selectedMeal.strMeal}</p>
-            <img src={selectedMeal.strMealThumb} alt="meal picture" width={300} />
-            <p>Ingredients: {selectedMeal.ingredients.join(', ')}</p>
-            <p>Instructions: {selectedMeal.strInstructions}</p>
-          </div>
+      {visible ? (
+        <section className="m-6  ">
+          {chunkedMeals.map((row, rowIndex) => (
+            <div key={rowIndex} className="flex ">
+              {row.map((meal) => (
+                <div
+                  key={meal.idMeal}
+                  className="border w-1/2 m-6 flex flex-col p-6 justify-center items-center cursor-pointer"
+                  onClick={() => {
+                    fetchMealDetails(meal.idMeal);
+                    handleClick(); // Hide the meal list after selecting a meal
+                  }}
+                >
+                  <img src={meal.strMealThumb} alt="meal picture" width={200} />
+                  <p className='mt-4'>{meal.strMeal}</p>
+                </div>
+              ))}
+            </div>
+          ))}
         </section>
+      ) : (
+        selectedMeal && (
+          <section className="m-6 border">
+            <div className="border w-full m-6 flex flex-col p-2 justify-center items-center">
+              <p>{selectedMeal.strMeal}</p>
+              <img src={selectedMeal.strMealThumb} alt="meal picture" width={300} />
+              <p>Ingredients: {selectedMeal.ingredients.join(', ')}</p>
+              <p>Instructions: {selectedMeal.strInstructions}</p>
+            </div>
+          </section>
+        )
       )}
     </>
   );
 };
-
 export default MealList;

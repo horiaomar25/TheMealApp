@@ -2,6 +2,7 @@
 import React from 'react';
 
 const Categories = ({ categories, onSelectCategory }) => {
+  
   const chunkArray = (array, chunkSize) => {
     const result = [];
     for (let i = 0; i < array.length; i += chunkSize) {
