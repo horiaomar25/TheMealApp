@@ -18,7 +18,7 @@ export default function Home() {
   return (
     <>
       <Navigation />
-      <Hero />
+      {selectedCategory ? null : <Hero />} {/* Show Hero only if no category is selected */}
       {selectedCategory ? (
         <MealList selectedCategory={selectedCategory} />
       ) : (
