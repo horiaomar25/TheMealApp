@@ -15,12 +15,16 @@ const DropMenu = () => {
     router.push("/");
   };
 
+  const handleClickFavourites = () => {
+
+  }
+
   return (
     <>
       <div className="border w-28 h-28">
         <p className="mb-2 mt-2">Profile</p>
-        <p className="mb-2">Favourites</p>
-        <button className="button block" type="button" onClick={signOutHandler}>
+        <button className="mb-2" type="button">Favourites</button>
+        <button className="button block text-center" type="button" onClick={signOutHandler}>
           Sign Out
         </button>
       </div>

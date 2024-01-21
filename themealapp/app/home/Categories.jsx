@@ -1,8 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
-import React from 'react';
+import React from "react";
 
 const Categories = ({ categories, onSelectCategory }) => {
-  
   const chunkArray = (array, chunkSize) => {
     const result = [];
     for (let i = 0; i < array.length; i += chunkSize) {
@@ -25,7 +24,11 @@ const Categories = ({ categories, onSelectCategory }) => {
                 onClick={() => onSelectCategory(category.strCategory)}
               >
                 <p>{category.strCategory}</p>
-                <img src={category.strCategoryThumb} alt="category picture" width={300} />
+                <img
+                  src={category.strCategoryThumb}
+                  alt="category picture"
+                  width={300}
+                />
               </div>
             ))}
           </div>

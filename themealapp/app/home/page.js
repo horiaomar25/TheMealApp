@@ -1,4 +1,4 @@
-"use client"
+"use client";
 // Home.js
 import { useState } from "react";
 import FetchCategories from "../API/FetchCategories";
@@ -18,7 +18,8 @@ export default function Home() {
   return (
     <>
       <Navigation />
-      {selectedCategory ? null : <Hero />} {/* Show Hero only if no category is selected */}
+      {selectedCategory ? null : <Hero />}{" "}
+      {/* Show Hero only if no category is selected */}
       {selectedCategory ? (
         <MealList selectedCategory={selectedCategory} />
       ) : (

@@ -129,35 +129,43 @@ const MealList = ({ selectedCategory }) => {
         </section>
       ) : (
         selectedMeal && (
-          <section className="m-6 border">
-            <div >
+          <section className="m-6 border ">
+            <div>
               <p className="font-poppins text-lg text-center font-semibold mb-2">
                 {selectedMeal.strMeal}
               </p>
-              <div className="flex flex-row border w-full justify-center items-center">
-  <img
-    src={selectedMeal.strMealThumb}
-    alt="meal picture"
-    className="border-2 m-10"
-    width={300}
-  /> 
-  <span className="font-poppins">Ingredients: </span>
-  <div className="grid grid-cols-2 w-1/2 text-center p-6 font-poppins">
-   
-    {/* Map through ingredients and create a <p> element for each */}
-    {selectedMeal.ingredients.map((ingredient, index) => (
-      <p key={index} className="font-poppins leading-loose">{ingredient}</p>
-    ))}
-  </div>
-</div>
+              <div className="flex flex-row border  justify-center items-center">
+                <img
+                  src={selectedMeal.strMealThumb}
+                  alt="meal picture"
+                  className="border-2 m-10"
+                  width={300}
+                />
+              
+                <div className="grid grid-cols-2 w-1/2 text-center p-6 font-poppins">  
+                <h2 className="font-poppins text-underline ">Ingredients: </h2>
+                  {/* Map through ingredients and create a <p> element for each */}
+                  {selectedMeal.ingredients.map((ingredient, index) => (
+                    <p key={index} className="font-poppins leading-loose">
+                      {ingredient}
+                    </p>
+                  ))}
+                </div>
+              </div>
               <p className="m-6 whitespace-pre-line">
-  <p className="font-bold font-poppins text-center">Instructions:</p>
-  {selectedMeal.strInstructions.split('.').map((sentence, index, array) => (
-    <span key={index} className="font-poppins leading-loose ">
-      {sentence.trim()}{index !== array.length - 1 && '.'}<br />
-    </span>
-  ))}
-</p>
+                <p className="font-bold font-poppins text-center">
+                  Instructions:
+                </p>
+                {selectedMeal.strInstructions
+                  .split(".")
+                  .map((sentence, index, array) => (
+                    <span key={index} className="font-poppins leading-loose ">
+                      {sentence.trim()}
+                      {index !== array.length - 1 && "."}
+                      <br />
+                    </span>
+                  ))}
+              </p>
             </div>
           </section>
         )
