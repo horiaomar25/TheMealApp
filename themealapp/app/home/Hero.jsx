@@ -3,7 +3,7 @@ import SearchInput from './SearchInput'
 
 const Hero = () => {
   return (
-    <section className='border m-6  '>
+    <section className='border m-6 bg-custom-background  '>
         <div className='h-96 p-30 flex justify-center'>
         
             <SearchInput/>

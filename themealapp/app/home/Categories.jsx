@@ -15,13 +15,13 @@ const Categories = ({ categories, onSelectCategory }) => {
 
   return (
     <>
-      <section className="m-6 border">
+      <section className="m-6 ">
         {chunkedCategories.map((row, rowIndex) => (
           <div key={rowIndex} className="flex">
             {row.map((category) => (
               <div
                 key={category.idCategory}
-                className="border w-1/2 m-6 flex flex-col p-2 justify-center items-center cursor-pointer"
+                className="border w-1/2 m-6 flex flex-col p-2 justify-center items-center cursor-pointer rounded-lg hover:shadow-nav-shadow"
                 onClick={() => onSelectCategory(category.strCategory)}
               >
                 <p>{category.strCategory}</p>

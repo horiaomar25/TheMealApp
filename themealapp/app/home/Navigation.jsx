@@ -20,7 +20,7 @@ const Navigation = () => {
   return (
     <header className='flex items-center justify-center text-center border m-4'> 
   
-      <h1>The Meal App</h1>
+      <h1 className='font-poppins'>The Meal App</h1>
      
     
         
