@@ -166,6 +166,7 @@ const MealList = ({ selectedCategory }) => {
                     </span>
                   ))}
               </p>
+             
             </div>
           </section>
         )

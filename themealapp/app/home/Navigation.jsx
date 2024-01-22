@@ -1,6 +1,6 @@
 import React from "react";
 import { useState } from "react";
-import DropMenu from "../Components/dropmenu";
+import DropMenu from "./dropmenu";
 
 const Navigation = () => {
   const [menu, setMenu] = useState(false);
