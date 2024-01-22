@@ -1,13 +1,20 @@
-import React, { useState, useEffect } from "react";
+"use client"
+import React, { useState, useEffect, useRouter } from "react";
+
 
 const MealList = ({ selectedCategory }) => {
   const [meals, setMeals] = useState([]);
   const [selectedMeal, setSelectedMeal] = useState(null);
   const [visible, setVisible] = useState(true);
 
+
   const handleClick = () => {
     setVisible(!visible);
   };
+
+
+
+
 
   /* A fetch request to TheMealAPI to retrieve meals carry the same category as the category clicked on.  */
   const fetchMeals = async () => {
@@ -95,6 +102,9 @@ const MealList = ({ selectedCategory }) => {
     }
   }, [selectedCategory]);
 
+ 
+
+
   const chunkArray = (array, chunkSize) => {
     const result = [];
     for (let i = 0; i < array.length; i += chunkSize) {
@@ -108,7 +118,7 @@ const MealList = ({ selectedCategory }) => {
   return (
     <>
       {visible ? (
-        <section className="m-6  ">
+        <section className="m-6">
           {chunkedMeals.map((row, rowIndex) => (
             <div key={rowIndex} className="flex  ">
               {row.map((meal) => (
@@ -129,21 +139,28 @@ const MealList = ({ selectedCategory }) => {
         </section>
       ) : (
         selectedMeal && (
-          <section className="m-6 border ">
+          <section className="m-6 border rounded-lg ">
             <div>
               <p className="font-poppins text-lg text-center font-semibold mb-2">
                 {selectedMeal.strMeal}
               </p>
-              <div className="flex flex-row border  justify-center items-center">
+           
+
+              
+
+              {/* This is the recipies page. It includes the ingredients, picture and instruction.  */}
+
+              <div className="flex flex-row   justify-center items-center ">
                 <img
                   src={selectedMeal.strMealThumb}
                   alt="meal picture"
-                  className="border-2 m-10"
+                  className="border-2 m-10 rounded-lg"
                   width={300}
                 />
-              
-                <div className="grid grid-cols-2 w-1/2 text-center p-6 font-poppins">  
-                <h2 className="font-poppins text-underline ">Ingredients: </h2>
+                <div className="grid grid-cols-2 w-1/2 text-center p-6 font-poppins">
+                  <h2 className="font-poppins  ">
+                    Ingredients:{" "}
+                  </h2>
                   {/* Map through ingredients and create a <p> element for each */}
                   {selectedMeal.ingredients.map((ingredient, index) => (
                     <p key={index} className="font-poppins leading-loose">
@@ -166,7 +183,6 @@ const MealList = ({ selectedCategory }) => {
                     </span>
                   ))}
               </p>
-             
             </div>
           </section>
         )
