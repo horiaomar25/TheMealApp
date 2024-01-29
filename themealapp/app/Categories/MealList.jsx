@@ -118,13 +118,13 @@ const MealList = ({ selectedCategory }) => {
   return (
     <>
       {visible ? (
-        <section className="m-6">
+        <section className="m-6 border ">
           {chunkedMeals.map((row, rowIndex) => (
-            <div key={rowIndex} className="flex  ">
+            <div key={rowIndex} className="flex justify-center ">
               {row.map((meal) => (
                 <div
                   key={meal.idMeal}
-                  className="border rounded-lg w-1/2 m-6 flex flex-col p-6 justify-center items-center cursor-pointer md:w-full sm:w-full hover:shadow-nav-shadow"
+                  className="border w-11/12 hover:shadow-nav-shadow m-4 flex flex-col p-4 justify-center items-center cursor-pointer rounded-lg"
                   onClick={() => {
                     fetchMealDetails(meal.idMeal);
                     handleClick(); // Hide the meal list after selecting a meal

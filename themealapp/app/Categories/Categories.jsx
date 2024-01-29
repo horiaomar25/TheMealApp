@@ -16,19 +16,20 @@ const Categories = ({ categories, onSelectCategory }) => {
     <>
       <section className="m-6 ">
         {chunkedCategories.map((row, rowIndex) => (
-          <div key={rowIndex} className="flex">
+          <div key={rowIndex} className="flex justify-center ">
             {row.map((category) => (
               <div
                 key={category.idCategory}
-                className="border w-1/2 m-6 flex flex-col p-2 justify-center items-center cursor-pointer rounded-lg hover:shadow-nav-shadow"
+                className="border hover:shadow-nav-shadow m-4 flex flex-col p-6 justify-center items-center cursor-pointer rounded-lg"
                 onClick={() => onSelectCategory(category.strCategory)}
               >
-                <p>{category.strCategory}</p>
+                
                 <img
                   src={category.strCategoryThumb}
                   alt="category picture"
                   width={300}
-                />
+                /><
+                  p className="font-poppins text-xl">{category.strCategory}</p>
               </div>
             ))}
           </div>

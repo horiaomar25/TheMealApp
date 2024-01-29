@@ -1,7 +1,9 @@
+"use client"
 import React from "react";
 import { useState } from "react";
 import DropMenu from "../Categories/dropmenu";
 import Link from "next/link";
+import SearchInput from "./SearchInput";
 
 const Navigation = () => {
   const [menu, setMenu] = useState(false);
@@ -19,22 +21,29 @@ const Navigation = () => {
   };
 
   return (
-    <header className="flex items-center justify-center text-center border m-4">
-      <h1 className="font-poppins ">The Meal App</h1>
-      <Link href="/Categories">Categories</Link>
-      
+    <header className=" m-4  rounded-md">
+    <nav className="sm:hidden md:hidden lg:flex font-poppins text-lg justify-between items-center  m-0">
 
-      <div className="relative">
+      <div className="flex items-center"> {/* Create a container for the logo and title */}
+        <img src="./logo.png" alt="logo" width={100} />
+        <h1 className="font-poppins ml-4">The Meal App</h1> {/* Add margin to create space */}
+      </div>
+
+      <Link href="/Categories">Categories</Link>
+
+      <div className="flex border items-end">
         <img
           onClick={handleMenuClick}
           src="./avatar.png"
           alt="avatar"
           width={100}
         />
+
         {menu && <DropMenu handleSignOut={handleSignOut} />}
         {/* Render the DropdownMenu when menu is true */}
       </div>
-    </header>
+    </nav>
+  </header>
   );
 };
 
