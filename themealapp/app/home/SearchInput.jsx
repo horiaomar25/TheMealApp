@@ -1,9 +1,13 @@
-import React from "react";
+import { useState } from "react";
 
 const SearchInput = () => {
+  const [search, setSearchTerm] = useState("");
+  const [searchResults, setSearchResults] = useState([]);
+
   return (
     <>
       <section className="flex justify-center items-center">
+        <form>
         <input
           type="search"
           id="search"
@@ -14,6 +18,7 @@ const SearchInput = () => {
         <button className=" font-poppins top-0 right-0  p-4 bg-blue-500 text-white rounded-lg md:w-1/3">
           Search
         </button>
+        </form>
       </section>
     </>
   );

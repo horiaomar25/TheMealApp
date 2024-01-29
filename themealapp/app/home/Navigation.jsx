@@ -1,6 +1,7 @@
 import React from "react";
 import { useState } from "react";
-import DropMenu from "./dropmenu";
+import DropMenu from "../Categories/dropmenu";
+import Link from "next/link";
 
 const Navigation = () => {
   const [menu, setMenu] = useState(false);
@@ -19,7 +20,9 @@ const Navigation = () => {
 
   return (
     <header className="flex items-center justify-center text-center border m-4">
-      <h1 className="font-poppins">The Meal App</h1>
+      <h1 className="font-poppins ">The Meal App</h1>
+      <Link href="/Categories">Categories</Link>
+      
 
       <div className="relative">
         <img
