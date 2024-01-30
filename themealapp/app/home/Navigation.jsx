@@ -3,6 +3,8 @@ import React from "react";
 import { useState } from "react";
 import DropMenu from "../Categories/dropmenu";
 import Link from "next/link";
+import SearchInput from "./SearchInput";
+
 
 
 const Navigation = () => {

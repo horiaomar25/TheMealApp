@@ -1,4 +1,3 @@
-/** @type {import('tailwindcss').Config} */
 module.exports = {
   darkMode: ["class"],
   content: [
@@ -37,8 +36,16 @@ module.exports = {
       /* Define hover effect for boxShadow */
       hover: {
         'nav-shadow': '0 4px 30px rgba(117, 231, 164, 0.8);'
-      }
+      },
+      backgroundImage: {
+        'custom-image': "url('/public/pasta.png')",
+       
+      },
+      colors: {
+        'pink': '#F2D4E0',
+      },
     },
   },
   plugins: [require("tailwindcss-animate")],
 }
+

@@ -17,7 +17,7 @@ const Hero = () => {
 
   return (
     <section className="border m-4 ">
-      <div className="h-96 p-30 flex justify-center">
+      <div className="h-96 p-30 flex justify-center ">
         <SearchInput setSearchResults={setSearchResults} />
       </div>
  
