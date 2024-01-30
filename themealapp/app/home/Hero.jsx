@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import SearchInput from "./SearchInput";
 
+
 const Hero = () => {
   const [searchResults, setSearchResults] = useState([]);
 
@@ -19,6 +20,7 @@ const Hero = () => {
       <div className="h-96 p-30 flex justify-center">
         <SearchInput setSearchResults={setSearchResults} />
       </div>
+ 
 
       <section className="border-2  flex flex-row w-full justify-center items-center text-center font-poppins">
   {searchResults.length > 0 && (

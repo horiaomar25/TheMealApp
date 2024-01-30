@@ -31,6 +31,13 @@ module.exports = {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
       },
+      boxShadow: {
+        'nav-shadow': '0 4px 30px rgba(117, 231, 164, 0.5);'
+      },
+      /* Define hover effect for boxShadow */
+      hover: {
+        'nav-shadow': '0 4px 30px rgba(117, 231, 164, 0.8);'
+      }
     },
   },
   plugins: [require("tailwindcss-animate")],

@@ -3,7 +3,7 @@ import React from "react";
 import { useState } from "react";
 import DropMenu from "../Categories/dropmenu";
 import Link from "next/link";
-import SearchInput from "./SearchInput";
+
 
 const Navigation = () => {
   const [menu, setMenu] = useState(false);
@@ -29,7 +29,7 @@ const Navigation = () => {
         <h1 className="font-poppins ml-4">The Meal App</h1> {/* Add margin to create space */}
       </div>
 
-      <Link href="/Categories">Categories</Link>
+      <Link href="/Categories" className="text-center hoover: underline">Categories</Link>
 
       <div className="flex border items-end">
         <img

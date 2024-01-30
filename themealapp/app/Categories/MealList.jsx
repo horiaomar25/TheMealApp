@@ -141,22 +141,27 @@ const MealList = ({ selectedCategory }) => {
         selectedMeal && (
           <section className="m-6 border rounded-lg ">
             <div>
-              <p className="font-poppins text-lg text-center font-semibold mb-2">
-                {selectedMeal.strMeal}
-              </p>
+              
            
 
               
 
               {/* This is the recipies page. It includes the ingredients, picture and instruction.  */}
-
               <div className="flex flex-row   justify-center items-center ">
+
+                {/* This is the card that holds the picture and name of the meal. */}
+                <div className="flex flex-col border-2 m-6 bg-slate-300">
                 <img
                   src={selectedMeal.strMealThumb}
                   alt="meal picture"
                   className="border-2 m-10 rounded-lg"
                   width={300}
                 />
+                <p className="font-poppins text-lg text-center font-semibold mb-2">
+                {selectedMeal.strMeal}
+              </p>
+              </div>
+
                 <div className="grid grid-cols-2 w-1/2 text-center p-6 font-poppins">
                   <h2 className="font-poppins  ">
                     Ingredients:{" "}
