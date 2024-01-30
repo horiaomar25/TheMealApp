@@ -26,9 +26,14 @@ const Navigation = () => {
     <header className=" m-4  rounded-md">
     <nav className="sm:hidden md:hidden lg:flex font-poppins text-lg justify-between items-center  m-0">
 
-      <div className="flex items-center"> {/* Create a container for the logo and title */}
+      <div className="flex flex-col items-center"> {/* Create a container for the logo and title */}
         <img src="./logo.png" alt="logo" width={100} />
-        <h1 className="font-poppins ml-4">The Meal App</h1> {/* Add margin to create space */}
+        <img
+      src="https://see.fontimg.com/api/renderfont4/x30zV/eyJyIjoiZnMiLCJoIjo2NSwidyI6MTAwMCwiZnMiOjY1LCJmZ2MiOiIjMDAwMDAwIiwiYmdjIjoiI0ZGRkZGRiIsInQiOjF9/VGhlIE1lYWwgQXBw/queensides-medium.png"
+      alt="logo"
+      width={150}
+      className="mt-5"
+    /> {/* Add margin to create space */}
       </div>
 
       <Link href="/Categories" className="text-center hoover: underline">Categories</Link>
