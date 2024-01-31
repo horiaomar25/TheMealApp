@@ -21,28 +21,25 @@ const Navigation = () => {
 
   return (
     <header className=" m-4  rounded-md">
-      <nav className="sm:hidden md:hidden lg:flex font-poppins text-lg justify-between items-center  m-0">
-        <div className="flex flex-col items-center">
-          {" "}
+      <nav className="flex justify-between items-center">
+        <div className="flex items-center">
+
           {/* Create a container for the logo and title */}
+          <div className=" md:flex">
           <img src="./logo.png" alt="logo" width={100} />
           <img
             src="https://see.fontimg.com/api/renderfont4/x30zV/eyJyIjoiZnMiLCJoIjo2NSwidyI6MTAwMCwiZnMiOjY1LCJmZ2MiOiIjMDAwMDAwIiwiYmdjIjoiI0ZGRkZGRiIsInQiOjF9/VGhlIE1lYWwgQXBw/queensides-medium.png"
             alt="logo"
             width={150}
-            className="mt-5"
+            className="mt-5 sm:w-10"
           />{" "}
-          {/* Add margin to create space */}
+          {/* Add margin to create space */} 
+          </div>
         </div>
 
-        <Link href="/Categories" className="text-center ">
-          Categories
-        </Link>
-        <Link href="/favourites" className="text-center ">
-          Favourites
-        </Link>
+       
 
-        <div className="flex border items-end">
+        <div className="flex border items-end flex-col">
           <img
             onClick={handleMenuClick}
             src="./avatar.png"
