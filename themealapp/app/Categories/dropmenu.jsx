@@ -12,7 +12,7 @@ const DropMenu = () => {
 
   const signOutHandler = async () => {
     await supabase.auth.signOut();
-    router.push("/login");
+    router.push("/");
   };
 
   const handleClickFavourites = () => {

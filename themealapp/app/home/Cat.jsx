@@ -1,7 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 import React from "react";
 
-const Categories = ({ categories, onSelectCategory }) => {
+const Cat = ({ categories, onSelectCategory }) => {
   const chunkArray = (array, chunkSize) => {
     const result = [];
     for (let i = 0; i < array.length; i += chunkSize) {
@@ -10,7 +10,7 @@ const Categories = ({ categories, onSelectCategory }) => {
     return result;
   };
 
-  const chunkedCategories = chunkArray(categories, 3);
+  const chunkedCategories = chunkArray(categories, 9);
 
   return (
     <>
@@ -22,16 +22,13 @@ const Categories = ({ categories, onSelectCategory }) => {
             {row.map((category) => (
               <div
                 key={category.idCategory}
-                className="border hover:shadow-nav-shadow m-4 flex flex-col p-6 justify-center items-center cursor-pointer rounded-lg"
+                className="border hover:shadow-nav-shadow m-4 flex flex-col p-2 w-32 justify-center items-center cursor-pointer rounded-lg"
                 onClick={() => onSelectCategory(category.strCategory)}
               >
                 
-                <img
-                  src={category.strCategoryThumb}
-                  alt="category picture"
-                  width={300}
-                />
-                <p className="font-poppins text-xl">{category.strCategory}</p>
+              
+                
+                <p className="font-poppins text-lg">{category.strCategory}</p>
               </div>
             ))}
           </div>
@@ -41,4 +38,4 @@ const Categories = ({ categories, onSelectCategory }) => {
   );
 };
 
-export default Categories;
+export default Cat;

@@ -35,8 +35,11 @@ const Navigation = () => {
           {/* Add margin to create space */}
         </div>
 
-        <Link href="/Categories" className="text-center hoover: underline">
+        <Link href="/Categories" className="text-center ">
           Categories
+        </Link>
+        <Link href="/favourites" className="text-center ">
+          Favourites
         </Link>
 
         <div className="flex border items-end">
