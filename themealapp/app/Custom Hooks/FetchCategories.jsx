@@ -19,6 +19,7 @@ const FetchCategories = () => {
         const data = await response.json();
 
         setCategories(data.categories);
+        console.log(data);
       } catch (error) {
         console.error("Error:", error.message);
       }
