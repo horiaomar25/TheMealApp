@@ -1,11 +1,8 @@
-"use client"
+"use client";
 import React from "react";
 import { useState } from "react";
 import DropMenu from "../Categories/dropmenu";
 import Link from "next/link";
-import SearchInput from "./SearchInput";
-
-
 
 const Navigation = () => {
   const [menu, setMenu] = useState(false);
@@ -24,33 +21,37 @@ const Navigation = () => {
 
   return (
     <header className=" m-4  rounded-md">
-    <nav className="sm:hidden md:hidden lg:flex font-poppins text-lg justify-between items-center  m-0">
+      <nav className="sm:hidden md:hidden lg:flex font-poppins text-lg justify-between items-center  m-0">
+        <div className="flex flex-col items-center">
+          {" "}
+          {/* Create a container for the logo and title */}
+          <img src="./logo.png" alt="logo" width={100} />
+          <img
+            src="https://see.fontimg.com/api/renderfont4/x30zV/eyJyIjoiZnMiLCJoIjo2NSwidyI6MTAwMCwiZnMiOjY1LCJmZ2MiOiIjMDAwMDAwIiwiYmdjIjoiI0ZGRkZGRiIsInQiOjF9/VGhlIE1lYWwgQXBw/queensides-medium.png"
+            alt="logo"
+            width={150}
+            className="mt-5"
+          />{" "}
+          {/* Add margin to create space */}
+        </div>
 
-      <div className="flex flex-col items-center"> {/* Create a container for the logo and title */}
-        <img src="./logo.png" alt="logo" width={100} />
-        <img
-      src="https://see.fontimg.com/api/renderfont4/x30zV/eyJyIjoiZnMiLCJoIjo2NSwidyI6MTAwMCwiZnMiOjY1LCJmZ2MiOiIjMDAwMDAwIiwiYmdjIjoiI0ZGRkZGRiIsInQiOjF9/VGhlIE1lYWwgQXBw/queensides-medium.png"
-      alt="logo"
-      width={150}
-      className="mt-5"
-    /> {/* Add margin to create space */}
-      </div>
+        <Link href="/Categories" className="text-center hoover: underline">
+          Categories
+        </Link>
 
-      <Link href="/Categories" className="text-center hoover: underline">Categories</Link>
+        <div className="flex border items-end">
+          <img
+            onClick={handleMenuClick}
+            src="./avatar.png"
+            alt="avatar"
+            width={100}
+          />
 
-      <div className="flex border items-end">
-        <img
-          onClick={handleMenuClick}
-          src="./avatar.png"
-          alt="avatar"
-          width={100}
-        />
-
-        {menu && <DropMenu handleSignOut={handleSignOut} />}
-        {/* Render the DropdownMenu when menu is true */}
-      </div>
-    </nav>
-  </header>
+          {menu && <DropMenu handleSignOut={handleSignOut} />}
+          {/* Render the DropdownMenu when menu is true */}
+        </div>
+      </nav>
+    </header>
   );
 };
 
