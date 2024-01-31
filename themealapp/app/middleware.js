@@ -4,7 +4,7 @@ import { NextRequest, NextResponse } from "next/server";
 export async function middleware (NextRequest){
     const res = NextResponse.next();
 
-    const supabase = createMiddlewareClient({ req, res});
+    const supabase = createMiddlewareClient({res,req});
 
     const {
         data: {
@@ -16,7 +16,7 @@ export async function middleware (NextRequest){
         return NextResponse.rewrite(new URL('/login', req.url));
     }
 
-    return res
+  return res
 
 }
 

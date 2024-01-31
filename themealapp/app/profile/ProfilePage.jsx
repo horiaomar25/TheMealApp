@@ -1,3 +1,4 @@
+import { data } from "autoprefixer";
 import React from "react";
 
 const ProfilePage = () => {
@@ -11,15 +12,21 @@ const ProfilePage = () => {
           width={200}
           className="mt-5"
         />
+        <label className="mt-10">Email</label>
         <input
           className="border mt-10 rounded-md p-2"
           type="text"
           placeholder="Email"
+          value={data?.email}
+          onChange={handleChange}
         />
+        <label className="mt-5">Password</label>
         <input
           className="border mt-5 rounded-md p-2"
           type="text"
           placeholder="Password"
+          value={data?.password}
+          onChange={handleChange}
         />
         <button className="mt-4 border p-2 rounded-lg bg-slate-400 w-60">
           Login
