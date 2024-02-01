@@ -16,13 +16,13 @@ const Hero = () => {
   const chunkedMeals = searchArray(searchResults, 3); // Use searchResults here
 
   return (
-    <section className="border m-4 ">
+    <section className="border border-black rounded-md m-4 ">
       <div className="h-96 p-30 flex justify-center ">
         <SearchInput setSearchResults={setSearchResults} />
       </div>
  
 
-      <section className="border-2  flex flex-row w-full justify-center items-center text-center font-poppins">
+      <section className="  flex flex-row w-full justify-center items-center text-center font-poppins">
   {searchResults.length > 0 && (
     <ul>
       {chunkedMeals.map((row, rowIndex) => (

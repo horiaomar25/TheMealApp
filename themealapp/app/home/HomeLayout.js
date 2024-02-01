@@ -15,7 +15,7 @@ export default function HomeLayou({ children }) {
   return (
     <html lang="en">
       
-      <body className={inter.className} >{children}</body>
+      <body className="bg-yellow" >{children}</body>
     </html>
   )
 }

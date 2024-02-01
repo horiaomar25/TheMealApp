@@ -17,6 +17,9 @@ module.exports = {
       lg: '976px',
       xl: '1440px',
       },
+      backgroundImage: theme => ({
+        'gradient-yellow': 'linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,147,15,1) 0%, rgba(255,249,91,1) 100%)',
+      }),
     },
     extend: {
       keyframes: {
@@ -34,18 +37,22 @@ module.exports = {
         "accordion-up": "accordion-up 0.2s ease-out",
       },
       boxShadow: {
-        'nav-shadow': '0 4px 30px rgba(117, 231, 164, 0.5);'
+        'nav-shadow': '0 4px 30px rgba(255, 255, 255, 0.8);'
       },
       /* Define hover effect for boxShadow */
       hover: {
-        'nav-shadow': '0 4px 30px rgba(117, 231, 164, 0.8);'
+        'nav-shadow': '0 4px 30px rgba(255, 255, 255, 0.8);'
       },
       backgroundImage: {
         'custom-image': "url('/public/pasta.png')",
-       
+       'yellow': '#f09819',
       },
       colors: {
-        'pink': '#F2D4E0',
+       
+        'orange': '#F88749',
+        'yellow': '#FCF0BB',
+        'blue': '#eaeefe',
+        
       },
     },
   },

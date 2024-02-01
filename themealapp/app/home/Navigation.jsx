@@ -26,20 +26,15 @@ const Navigation = () => {
 
           {/* Create a container for the logo and title */}
           <div className=" md:flex">
-          <img src="./logo.png" alt="logo" width={100} />
-          <img
-            src="https://see.fontimg.com/api/renderfont4/x30zV/eyJyIjoiZnMiLCJoIjo2NSwidyI6MTAwMCwiZnMiOjY1LCJmZ2MiOiIjMDAwMDAwIiwiYmdjIjoiI0ZGRkZGRiIsInQiOjF9/VGhlIE1lYWwgQXBw/queensides-medium.png"
-            alt="logo"
-            width={150}
-            className="mt-5 sm:w-10"
-          />{" "}
+          <img src="./cooking.png" alt="logo" width={100} className="m-4" />
+        
           {/* Add margin to create space */} 
           </div>
         </div>
 
        
 
-        <div className="flex border items-end flex-col">
+        <div className="flex  items-end flex-col">
           <img
             onClick={handleMenuClick}
             src="./avatar.png"

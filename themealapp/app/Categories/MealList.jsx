@@ -90,13 +90,13 @@ const MealList = ({ selectedCategory }) => {
   return (
     <>
 
-      <section className="m-6 border">
+      <section className="m-6 ">
         {chunkedMeals.map((row, rowIndex) => (
           <div key={rowIndex} className="flex justify-center">
             {row.map((meal) => (
               <div
                 key={meal.idMeal}
-                className="border w-11/12 hover:shadow-nav-shadow m-4 flex flex-col p-4 justify-center items-center cursor-pointer rounded-lg"
+                className="border border-black w-11/12 hover:shadow-nav-shadow m-4 flex flex-col p-4 justify-center items-center cursor-pointer rounded-lg"
                 onClick={() => {
                   fetchMealDetails(meal.idMeal);
                   
@@ -109,6 +109,7 @@ const MealList = ({ selectedCategory }) => {
           </div>
         ))}
       </section>
+      
 
       {isModalOpen && selectedMeal && (
         <RecipeCard meal={selectedMeal} onClose={handleCloseModal} />
