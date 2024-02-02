@@ -12,10 +12,10 @@ module.exports = {
       center: true,
       padding: "2rem",
       screens: {
-        sm: {'max':'390px'},
-      md: {'max':'768px'},
-      lg: '976px',
-      xl: '1440px',
+        sm: '640px',
+      md: '768px',
+      lg: '1024px',
+      xl: '1280px',
       },
       backgroundImage: theme => ({
         'gradient-yellow': 'linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,147,15,1) 0%, rgba(255,249,91,1) 100%)',

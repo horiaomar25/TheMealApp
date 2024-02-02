@@ -33,8 +33,8 @@ export default function Home() {
   };
 
   return (
-      <div className="flex flex-col justify-center items-center h-screen">
-          <div className="border-2 border-black flex flex-col justify-center items-center rounded-lg bg-orange p-10 w-2/5 .h-2/5">
+      <div className="flex flex-col justify-center items-center h-screen ">
+          <div className="border-2 border-black flex flex-col justify-center items-center rounded-lg bg-orange p-10 w-11/12 .h-2/5 sm:w-1/2 lg:w-1/2 md:w-1/2 ">
               <img src="/cooking.png" alt="logo" width={150} className="rounded" />
               <img
                   src="https://see.fontimg.com/api/renderfont4/x30zV/eyJyIjoiZnMiLCJoIjo2NSwidyI6MTAwMCwiZnMiOjY1LCJmZ2MiOiIjMDAwMDAwIiwiYmdjIjoiI0ZGRkZGRiIsInQiOjF9/VGhlIE1lYWwgQXBw/queensides-medium.png"

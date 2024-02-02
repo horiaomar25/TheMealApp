@@ -8,6 +8,7 @@ import FetchCategories from "../Custom Hooks/FetchCategories";
 import HomeLayout from "./HomeLayout";
 import { useState } from "react";
 
+
 export default function Home() {
   const { categories } = FetchCategories();
   const [selectedCategory, setSelectedCategory] = useState("");

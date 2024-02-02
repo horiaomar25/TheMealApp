@@ -52,8 +52,6 @@ const MealList = ({ selectedCategory }) => {
         }
       }
 
-   
-
       setSelectedMeal({
         ...mealDetails,
         ingredients,
@@ -73,43 +71,42 @@ const MealList = ({ selectedCategory }) => {
   const handleCloseModal = () => {
     setIsModalOpen(false);
     setSelectedMeal(null);
-  };   
-  
+  };
+
   const chunkArray = (array, chunkSize) => {
-        const result = [];
-        for (let i = 0; i < array.length; i += chunkSize) {
-          result.push(array.slice(i, i + chunkSize));
-        }
-        return result;
-      };
-    
-    
-    
-      const chunkedMeals = chunkArray(meals, 3);
+    const result = [];
+    for (let i = 0; i < array.length; i += chunkSize) {
+      result.push(array.slice(i, i + chunkSize));
+    }
+    return result;
+  };
+
+  const chunkedMeals = chunkArray(meals, 3);
 
   return (
     <>
-
-      <section className="m-6 ">
-        {chunkedMeals.map((row, rowIndex) => (
-          <div key={rowIndex} className="flex justify-center">
-            {row.map((meal) => (
-              <div
-                key={meal.idMeal}
-                className="border border-black w-11/12 hover:shadow-nav-shadow m-4 flex flex-col p-4 justify-center items-center cursor-pointer rounded-lg"
-                onClick={() => {
-                  fetchMealDetails(meal.idMeal);
-                  
-                }}
-              >
-                <img src={meal.strMealThumb} alt="meal picture" width={200} />
-                <p className="mt-4 font-poppins">{meal.strMeal}</p>
-              </div>
-            ))}
-          </div>
-        ))}
-      </section>
-      
+      {!selectedMeal && (
+        <section className="m-6 ">
+          {chunkedMeals.map((row, rowIndex) => (
+            <div key={rowIndex} className="flex justify-center">
+              {row.map((meal) => (
+                <div
+                  key={meal.idMeal}
+                  className="border border-black w-11/12 hover:shadow-nav-shadow m-4 flex flex-col p-4 justify-center items-center cursor-pointer rounded-lg"
+                  onClick={() => fetchMealDetails(meal.idMeal)}
+                >
+                  <img
+                    src={meal.strMealThumb}
+                    alt="meal picture"
+                    width={200}
+                  />
+                  <p className="mt-4 font-poppins">{meal.strMeal}</p>
+                </div>
+              ))}
+            </div>
+          ))}
+        </section>
+      )}
 
       {isModalOpen && selectedMeal && (
         <RecipeCard meal={selectedMeal} onClose={handleCloseModal} />

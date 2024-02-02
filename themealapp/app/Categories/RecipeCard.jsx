@@ -19,10 +19,10 @@ const RecipeCard = ({ meal, onClose }) => {
   return (
     <div className="w-full bg-yellow p-8 relative flex flex-col justify-center items-center">
       <span
-        className="absolute top-0 right-0 m-4 text-3xl cursor-pointer"
+        className="absolute top-0 left-0 m-4 text-3xl cursor-pointer"
         onClick={onClose}
       >
-        &times;
+     <img src='./back-arrow.png' alt="arrow icon" />
       </span>
       <div className="flex justify-center items-center w-full overflow-auto">
         <img
