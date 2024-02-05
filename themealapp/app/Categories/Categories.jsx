@@ -22,7 +22,7 @@ const Categories = ({ categories, onSelectCategory }) => {
             {row.map((category) => (
               <div
                 key={category.idCategory}
-                className="border hover:shadow-nav-shadow m-4 flex flex-col p-6 justify-center items-center cursor-pointer rounded-lg"
+                className="border hover:shadow-nav-shadow hover:bg-orange m-4 flex flex-col p-6 justify-center items-center cursor-pointer rounded-lg"
                 onClick={() => onSelectCategory(category.strCategory)}
               >
                 

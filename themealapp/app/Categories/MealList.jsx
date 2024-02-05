@@ -76,20 +76,20 @@ const MealList = ({ selectedCategory }) => {
   return (
     <>
       {!selectedMeal && (
-        <section className="m-6 grid grid-cols-1 sm:grid-cols-3 gap-4">
+        <section className="m-10 grid grid-cols-1 sm:grid-cols-3 gap-4">
           {meals.map((meal) => (
             <div
               key={meal.idMeal}
-              className="border border-black hover:shadow-nav-shadow flex flex-col p-4 justify-center items-center cursor-pointer rounded-lg"
+              className="border border-black hover:shadow-nav-shadow hover:bg-orange flex flex-col p-4 justify-center items-center cursor-pointer rounded-lg"
               onClick={() => fetchMealDetails(meal.idMeal)}
             >
               <img
                 src={meal.strMealThumb}
                 alt="meal picture"
-                width={200}
-                className="mb-4"
+              
+                className="mb-4 w-full h-48 object-cover rounded-lg"
               />
-              <p className="font-poppins">{meal.strMeal}</p>
+              <p className="text-lg font-bold font-poppins">{meal.strMeal}</p>
             </div>
           ))}
         </section>
