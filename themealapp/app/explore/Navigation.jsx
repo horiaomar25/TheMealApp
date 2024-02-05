@@ -33,6 +33,7 @@ const Navigation = () => {
         </div>  
         <Link href="/home">Home</Link>
         <Link href="/explore">Explore</Link>
+        <Link href="/Categories">Categories</Link>
       
 
        

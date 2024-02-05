@@ -26,13 +26,7 @@ export default function Home() {
       <HomeLayout>
         <Navigation />
         <SearchResults showResults={handleSearchResults} />
-        {!showSearchResults && (
-          <Cat
-            categories={categories}
-            onSelectCategory={handleCategoryClick}
-            selectedCategory={selectedCategory}
-          />
-        )}
+       
         {selectedCategory && !showSearchResults && (
           <MealList selectedCategory={selectedCategory} />
         )}

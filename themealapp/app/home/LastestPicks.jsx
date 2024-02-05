@@ -145,16 +145,19 @@ const LatestPicks = () => {
 
   return (
     <>
-      <h1 className="text-4xl font-bold m-6">Latest Picks</h1>
-      <section className="m-6 grid grid-cols-1 sm:grid-cols-3 gap-4"> 
-        {meals.map((meal) => (
-          <div key={meal.idMeal} className="flex flex-col justify-center items-center p-6 w-80 rounded-lg m-6 border border-black">
-            <img src={meal.strMealThumb} alt={meal.strMeal} width={400} />
-            <h5 className="card-title">{meal.strMeal}</h5>
-          </div>
-        ))}
-      </section>
-    </>
+  <h1 className="text-4xl font-bold m-6">Latest Picks</h1>
+  <section className="flex justify-center"> {/* Use flexbox to center the section */}
+    <div className="m-6 grid grid-cols-1 sm:grid-cols-3 gap-4 border">
+      {meals.map((meal) => (
+        <div key={meal.idMeal} className="flex flex-col justify-center items-center p-6 w-80 rounded-lg m-6 border border-black">
+          <img src={meal.strMealThumb} alt={meal.strMeal} width={400} />
+          <h5 className="card-title">{meal.strMeal}</h5>
+        </div>
+      ))}
+    </div>
+  </section>
+</>
+
   );
 }
 

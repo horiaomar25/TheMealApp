@@ -1,11 +1,10 @@
 "use client";
 
 import FetchCategories from "../Custom Hooks/FetchCategories";
-import React from "react";
-import CategoriesSelect from "../Categories/Categories";
-import MealList from "../Categories/MealList";
 import { useState } from "react";
+import Cat from "../explore/Cat";
 import Navigation from "../explore/Navigation";
+import MealList from "./MealList";
 
 export const Categories = () => {
   const { categories } = FetchCategories();
@@ -18,17 +17,15 @@ export const Categories = () => {
   return (
     <>
       <Navigation />
-
-      {selectedCategory ? (
-        <MealList selectedCategory={selectedCategory} />
-      ) : (
-        <CategoriesSelect
-          categories={categories}
-          onSelectCategory={handleCategoryClick}
-        />
-      )}
+      <Cat
+        categories={categories}
+        onSelectCategory={handleCategoryClick}
+        selectedCategory={selectedCategory}
+      />
+      {selectedCategory && <MealList selectedCategory={selectedCategory} />}
     </>
   );
 };
+
 
 export default Categories;

@@ -27,6 +27,7 @@ const SearchResults = () => {
           <SearchInput setSearchResults={setSearchResults} />
         </div>
       </section>
+      <h3>Search Results </h3>
       {selectedMeal ? (
         <div className="flex flex-row w-full justify-center items-center text-center font-poppins">
           <div className="mt-4 p-4 border border-black rounded-md">
@@ -55,7 +56,9 @@ const SearchResults = () => {
           </div>
         </div>
       ) : (
+  
         <section className="flex flex-row w-full justify-center items-center text-center font-poppins">
+         
           {searchResults.length > 0 && (
             <ul>
               {chunkedMeals.map((row, rowIndex) => (
