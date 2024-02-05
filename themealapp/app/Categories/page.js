@@ -5,7 +5,7 @@ import React from "react";
 import CategoriesSelect from "../Categories/Categories";
 import MealList from "../Categories/MealList";
 import { useState } from "react";
-import Navigation from "../home/Navigation";
+import Navigation from "../explore/Navigation";
 
 export const Categories = () => {
   const { categories } = FetchCategories();

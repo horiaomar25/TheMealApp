@@ -30,7 +30,10 @@ const Navigation = () => {
         
           {/* Add margin to create space */} 
           </div>
-        </div>
+        </div>  
+        <Link href="/home">Home</Link>
+        <Link href="/explore">Explore</Link>
+      
 
        
 
