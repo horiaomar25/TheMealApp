@@ -22,12 +22,12 @@ const SearchResults = () => {
 
   return (
     <>
-      <section className="border border-black rounded-md m-4">
+      <section className="border border-black rounded-md m-4 bg-orange">
         <div className="h-96 p-30 flex justify-center">
           <SearchInput setSearchResults={setSearchResults} />
         </div>
       </section>
-      <h3>Search Results </h3>
+      
       {selectedMeal ? (
         <div className="flex flex-row w-full justify-center items-center text-center font-poppins">
           <div className="mt-4 p-4 border border-black rounded-md">
@@ -56,32 +56,29 @@ const SearchResults = () => {
           </div>
         </div>
       ) : (
-  
-        <section className="flex flex-row w-full justify-center items-center text-center font-poppins">
-         
+        <section className="m-10 grid grid-cols-1 sm:grid-cols-2 gap-4">
           {searchResults.length > 0 && (
-            <ul>
+            <>
               {chunkedMeals.map((row, rowIndex) => (
-                <div key={rowIndex} className="flex">
+                <div key={rowIndex} className="space-y-4  ">
                   {row.map((meal) => (
-                    <li
+                    <div
                       key={meal.idMeal}
-                      className="border border-black hover:shadow-nav-shadow m-4 flex flex-col p-10 justify-center items-center cursor-pointer rounded-lg"
+                      className="border border-black hover:bg-orange flex flex-col p-4 justify-center items-center cursor-pointer rounded-lg"
                       onClick={() => handleMealClick(meal)}
                     >
                       <img
                         src={meal.strMealThumb}
                         alt={meal.strMeal}
                         width={300}
-                        className="rounded-lg mb-2"
+                        className="mb-4 w-full h-48 object-cover rounded-lg"
                       />
-                      <p className="text-xl font-poppins">{meal.strMeal}</p>
-                   
-                    </li>
+                      <p className="text-lg font-bold font-poppins">{meal.strMeal}</p>
+                    </div>
                   ))}
                 </div>
               ))}
-            </ul>
+            </>
           )}
         </section>
       )}
@@ -90,6 +87,5 @@ const SearchResults = () => {
 };
 
 export default SearchResults;
-
 
 

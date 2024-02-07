@@ -31,6 +31,7 @@ const SearchInput = ({ setSearchResults }) => {
   return (
     <section className="flex flex-row justify-center items-center sm:w-auto">
   <form onSubmit={handleFormSubmit} className="flex flex-row items-center">
+    
     <input
       type="search"
       id="search"
@@ -42,7 +43,7 @@ const SearchInput = ({ setSearchResults }) => {
     />
     <button
       type="submit"
-      className="font-poppins p-4 bg-orange text-white rounded-lg md:w-1/3"
+      className="font-poppins p-4 bg-yellow text-black rounded-lg md:w-1/3"
       disabled={loading}
     >
       {loading ? 'Searching...' : 'Search'}

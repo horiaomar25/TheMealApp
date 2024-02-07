@@ -51,9 +51,9 @@ export default function Home() {
                   value={data.email}
                   onChange={handleChange}
               />
-              <label className="mt-5">Password</label>
+              <label className="mt-4">Password</label>
               <input
-                  className="border  rounded-md p-2 w-1/2"
+                  className="border  rounded-md p-2 w-1/2 mt-2"
                   type="password"
                   placeholder="Password"
                   name="password"
