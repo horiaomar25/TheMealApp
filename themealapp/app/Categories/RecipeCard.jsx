@@ -1,13 +1,27 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 const RecipeCard = ({ meal, onClose }) => {
   // Initialize state to track checked ingredients
   const [checkedIngredients, setCheckedIngredients] = useState([]);
 
-  // Favourite toggle state
-  const [isFavourite, setIsFavourite] = useState(false);
-  const [favourites, setFavourites] = useState([]);
+  // Initialize state for favorites, fetch from local storage
+  const [favourites, setFavourites] = useState(
+    JSON.parse(localStorage.getItem("favourites")) || []
+  );
 
+  // Favourite toggle state
+  const [isFavourite, setIsFavourite] = useState(
+    favourites.some((f) => f.idMeal === meal.idMeal)
+  );
+
+  useEffect(() => {
+    // Save favorites to local storage whenever it changes
+    localStorage.setItem("favourites", JSON.stringify(favourites));
+  }, [favourites]);
+
+ 
+
+  // Function to handle toggling favorites
   const handleFavourite = () => {
     if (isFavourite) {
       setFavourites(favourites.filter((f) => f.idMeal !== meal.idMeal));
@@ -17,7 +31,6 @@ const RecipeCard = ({ meal, onClose }) => {
     setIsFavourite(!isFavourite);
   };
 
- console.log(favourites);
   // Split the instructions into an array of sentences
   const instructions = meal.strInstructions.split(".");
 
@@ -29,6 +42,7 @@ const RecipeCard = ({ meal, onClose }) => {
       setCheckedIngredients([...checkedIngredients, index]);
     }
   };
+
 
   return (
     <div className="w-full bg-yellow p-8 relative flex flex-col justify-center items-center">
