@@ -1,25 +1,32 @@
 import React, { useState, useEffect } from "react";
 
 const RecipeCard = ({ meal, onClose }) => {
-  // Initialize state to track checked ingredients
-  const [checkedIngredients, setCheckedIngredients] = useState([]);
-
-  // Initialize state for favorites, fetch from local storage
   const [favourites, setFavourites] = useState(
     JSON.parse(localStorage.getItem("favourites")) || []
   );
 
-  // Favourite toggle state
   const [isFavourite, setIsFavourite] = useState(
     favourites.some((f) => f.idMeal === meal.idMeal)
   );
 
   useEffect(() => {
-    // Save favorites to local storage whenever it changes
     localStorage.setItem("favourites", JSON.stringify(favourites));
   }, [favourites]);
 
-  // Function to handle toggling favorites
+  const ingredients = [];
+  for (let i = 1; i <= 20; i++) {
+    const ingredientKey = `strIngredient${i}`;
+    const measureKey = `strMeasure${i}`;
+    if (meal[ingredientKey]) {
+      const ingredient = `${meal[measureKey]} ${meal[ingredientKey]}`;
+      ingredients.push(ingredient);
+    } else {
+      break; // Stop iterating if there are no more ingredients
+    }
+  }
+
+  const instructions = meal?.strInstructions?.split(".") || [];
+
   const handleFavourite = () => {
     if (isFavourite) {
       setFavourites(favourites.filter((f) => f.idMeal !== meal.idMeal));
@@ -29,20 +36,15 @@ const RecipeCard = ({ meal, onClose }) => {
     setIsFavourite(!isFavourite);
   };
 
-  // Split the instructions into an array of sentences
-  const instructions = meal.strInstructions.split(".");
-
-  
-
   return (
     <div className="w-full  bg-yellow p-8 relative flex flex-col justify-center items-center">
+      {/* Header section */}
       <span
         className="absolute top-0 left-0 m-4 text-3xl cursor-pointer"
         onClick={onClose}
       >
         <img src="./back-arrow.png" alt="arrow icon" />
       </span>
-
       <span
         className="absolute top-0 right-0 m-4 text-3xl cursor-pointer"
         onClick={handleFavourite}
@@ -54,6 +56,7 @@ const RecipeCard = ({ meal, onClose }) => {
         )}
       </span>
 
+      {/* Meal image */}
       <div className="flex justify-center items-center w-full overflow-auto">
         <img
           src={meal.strMealThumb}
@@ -63,27 +66,26 @@ const RecipeCard = ({ meal, onClose }) => {
         />
       </div>
 
+      {/* Ingredients and Instructions */}
       <div className="w-full p-4 rounded-lg flex flex-col md:flex-row items-center justify-center mt-6">
-        <div className="w-1/2  rounded-lg p-6  mr-6 md:w-1/2">
+        <div className="w-1/2 rounded-lg p-6 mr-6 md:w-1/2">
           <h2 className="text-xl font-bold mt-2 mb-4 mr-20 text-center">
             Ingredients:
           </h2>
           <div className="flex flex-wrap justify-between">
-          {meal.ingredients && meal.ingredients.map((ingredient, index) => (
-  <div key={index} className="w-1/2">
-    <ul className="space-y-2">
-      <li className="flex items-center ml-6 text-lg">
-        {ingredient}
-      </li>
-    </ul>
-  </div>
-))}
-
+            {ingredients.map((ingredient, index) => (
+              <div key={index} className="w-1/2">
+                <ul className="space-y-2">
+                  <li className="flex items-center ml-6 text-lg">
+                    {ingredient}
+                  </li>
+                </ul>
+              </div>
+            ))}
           </div>
         </div>
         <div className="md:w-1/2">
           <h2 className="text-xl font-bold mt-4 md:mt-2">Instructions:</h2>
-          {/* Chunk instructions into groups of 3 and create a <p> element for each group */}
           {Array.from(
             { length: Math.ceil(instructions.length / 3) },
             (v, i) => i
