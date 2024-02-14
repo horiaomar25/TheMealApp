@@ -32,14 +32,7 @@ const RecipeCard = ({ meal, onClose }) => {
   // Split the instructions into an array of sentences
   const instructions = meal.strInstructions.split(".");
 
-  // Toggle function to handle checkbox state changes
-  const toggleIngredient = (index) => {
-    if (checkedIngredients.includes(index)) {
-      setCheckedIngredients(checkedIngredients.filter((i) => i !== index));
-    } else {
-      setCheckedIngredients([...checkedIngredients, index]);
-    }
-  };
+  
 
   return (
     <div className="w-full  bg-yellow p-8 relative flex flex-col justify-center items-center">
