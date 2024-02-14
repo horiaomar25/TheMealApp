@@ -69,15 +69,16 @@ const RecipeCard = ({ meal, onClose }) => {
             Ingredients:
           </h2>
           <div className="flex flex-wrap justify-between">
-            {meal.ingredients.map((ingredient, index) => (
-              <div key={index} className="w-1/2">
-                <ul className="space-y-2">
-                  <li className="flex items-center ml-6 text-lg">
-                    {ingredient}
-                  </li>
-                </ul>
-              </div>
-            ))}
+          {meal.ingredients && meal.ingredients.map((ingredient, index) => (
+  <div key={index} className="w-1/2">
+    <ul className="space-y-2">
+      <li className="flex items-center ml-6 text-lg">
+        {ingredient}
+      </li>
+    </ul>
+  </div>
+))}
+
           </div>
         </div>
         <div className="md:w-1/2">
