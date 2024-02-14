@@ -30,21 +30,18 @@ const SearchResults = () => {
 
       {/* Conditionally render RecipeCard if selectedMeal is not null */}
       {selectedMeal && (
-        <RecipeCard
-          meal={selectedMeal}
-          onClose={() => setSelectedMeal(null)}
-        />
+        <RecipeCard meal={selectedMeal} onClose={() => setSelectedMeal(null)} />
       )}
 
       {/* Render search results */}
       {!selectedMeal && searchResults.length > 0 && (
-        <section className="m-10 grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <section className="m-10 grid grid-cols-1 sm:grid-cols-3 gap-4">
           {chunkedMeals.map((row, rowIndex) => (
             <div key={rowIndex} className="space-y-4">
               {row.map((meal) => (
                 <div
                   key={meal.idMeal}
-                  className="border border-black hover:bg-orange flex flex-col p-4 justify-center items-center cursor-pointer rounded-lg"
+                  className="border border-black hover:bg-orange flex flex-col p-4 justify-center items-center cursor-pointer rounded-lg "
                   onClick={() => handleMealClick(meal)}
                 >
                   <img
@@ -53,7 +50,7 @@ const SearchResults = () => {
                     width={300}
                     className="mb-4 w-full h-48 object-cover rounded-lg"
                   />
-                  <p className="text-lg font-bold font-poppins">
+                  <p className="text-lg font-bold font-poppins ">
                     {meal.strMeal}
                   </p>
                 </div>
@@ -67,6 +64,3 @@ const SearchResults = () => {
 };
 
 export default SearchResults;
-
-
-

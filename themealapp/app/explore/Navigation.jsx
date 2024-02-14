@@ -31,9 +31,9 @@ const Navigation = () => {
           {/* Add margin to create space */} 
           </div>
         </div>  
-        <Link href="/home">Home</Link>
-        <Link href="/explore">Explore</Link>
-        <Link href="/Categories">Categories</Link>
+        <Link href="/home" className="font-bold">Home</Link>
+        <Link href="/explore" className="font-bold">Explore</Link>
+        <Link href="/Categories" className="font-bold">Categories</Link>
       
 
        
