@@ -6,6 +6,7 @@ const SearchResults = () => {
   const [searchResults, setSearchResults] = useState([]);
   const [selectedMeal, setSelectedMeal] = useState(null);
   const [currentPage, setCurrentPage] = useState(1);
+  const [searchValue, setSearchValue] = useState(""); // State to store the search value
   const mealsPerPage = 9; // Fixed number of meals per page
 
   useEffect(() => {
@@ -49,10 +50,11 @@ const SearchResults = () => {
     <>
       <section className="border border-black rounded-md m-4 bg-orange">
         <div className="h-96 p-30 flex justify-center">
-          <SearchInput setSearchResults={setSearchResults} />
+          <SearchInput setSearchResults={setSearchResults} setSearchValue={setSearchValue} /> {/* Pass setSearchValue */}
         </div>
-    
+        {searchValue && <p className="text-white text-center">Search value: {searchValue}</p>} {/* Render search value */}
       </section>
+      
       {searchResults.length > mealsPerPage && (
         <div className="flex justify-center items-center">
           <h2></h2>

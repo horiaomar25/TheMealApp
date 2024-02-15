@@ -86,22 +86,28 @@ const MealList = ({ selectedCategory }) => {
 
   return (
     <>
-    <div className="flex justify-center items-center">
-      {Array.from({ length: Math.ceil(meals.length / mealsPerPage) }).map(
-        (item, index) => (
-          <button 
-            key={index} 
-            className={`text-xl mr-2 border-2 border-black rounded-full p-2 mb-6 ${selectedPage === index + 1 ? 'bg-orange text-white' : ''}`} // Change background color and text color if selected
-            onClick={() => {
-              setSelectedPage(index + 1); // Update the selected page
-              paginate(index + 1); // Call the paginate function with the selected page number
-            }}
-          >
-            {index + 1}
-          </button>
-        )
+      {!selectedMeal && (
+        <>
+          <div className="flex justify-center items-center">
+            {Array.from({ length: Math.ceil(meals.length / mealsPerPage) }).map(
+              (item, index) => (
+                <button
+                  key={index}
+                  className={`text-xl mr-2 border-2 border-black rounded-full p-2 mb-6 ${selectedPage === index + 1 ? 'bg-orange text-white' : ''}`} // Change background color and text color if selected
+                  onClick={() => {
+                    setSelectedPage(index + 1); // Update the selected page
+                    paginate(index + 1); // Call the paginate function with the selected page number
+                  }}
+                >
+                  {index + 1}
+                </button>
+              )
+            )}
+          </div>
+          <p className='font-poppins text-4xl font-bold m-4 ml-10'>Category Selected: {selectedCategory}</p>
+        </>
       )}
-    </div>
+
       {!selectedMeal && (
         <section className="m-10 grid grid-cols-1 sm:grid-cols-3 gap-4">
           {currentMeals.map((meal) => (
@@ -124,8 +130,6 @@ const MealList = ({ selectedCategory }) => {
       {isModalOpen && selectedMeal && (
         <RecipeCard meal={selectedMeal} onClose={handleCloseModal} />
       )}
-
-
     </>
   );
 };

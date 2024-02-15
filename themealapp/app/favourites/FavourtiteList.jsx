@@ -3,7 +3,7 @@ import React from 'react';
 const FavourtiteList = ({ favourites }) => {
   return (
     <section className=' m-4 rounded-xl '>
-      <h2 className='m-6'>Favourtite List</h2>
+
       <div className="grid grid-cols-3 gap-4">
         {favourites.map((favourite) => (
           <div key={favourite.id} className=' rounded-xl flex flex-col p-6'>

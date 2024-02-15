@@ -50,7 +50,7 @@ const RecipeCard = ({ meal, onClose }) => {
         onClick={handleFavourite}
       >
         {isFavourite ? (
-          <img src="/lover.png" alt="favorite icon" width={30} />
+          <img src="/lover.png" alt="favorite icon" width={30} className="m-30" />
         ) : (
           <img src="/heart.png" alt="favorite icon" width={30} />
         )}
@@ -62,22 +62,22 @@ const RecipeCard = ({ meal, onClose }) => {
           src={meal.strMealThumb}
           alt="meal picture"
           width={400}
-          className="border-2 border-black rounded-lg"
+          className="border-2 border-black rounded-lg mt-10"
         />
      
       </div>
-   <p className="">{meal.strMeal}</p>
+      <p className='font-poppins text-2xl font-bold m-4 ml-10'>{meal.strMeal}</p>
       {/* Ingredients and Instructions */}
-      <div className="w-full p-4 rounded-lg flex flex-col md:flex-row items-center justify-center mt-6">
-        <div className="w-1/2 rounded-lg p-6 mr-6 md:w-1/2">
-          <h2 className="text-xl font-bold mt-2 mb-4 mr-20 text-center">
+      <div className="w-full p-4 rounded-lg flex flex-col md:flex-row items-start justify-center mt-6">
+        <div className="w-full md:w-1/2 rounded-lg p-6 mr-6">
+          <h2 className="text-xl font-bold mt-2 mb-4 text-center">
             Ingredients:
           </h2>
           <div className="flex flex-wrap justify-between">
             {ingredients.map((ingredient, index) => (
               <div key={index} className="w-1/2">
                 <ul className="space-y-2">
-                  <li className="flex items-center ml-6 text-lg">
+                  <li className="flex items-center text-lg">
                     {ingredient}
                   </li>
                 </ul>
@@ -85,8 +85,8 @@ const RecipeCard = ({ meal, onClose }) => {
             ))}
           </div>
         </div>
-        <div className="md:w-1/2">
-          <h2 className="text-xl font-bold mt-4 md:mt-2">Instructions:</h2>
+        <div className="w-full md:w-1/2">
+          <h2 className="text-xl font-bold mt-4 md:mt-2 text-center">Instructions:</h2>
           {Array.from(
             { length: Math.ceil(instructions.length / 3) },
             (v, i) => i
@@ -102,3 +102,4 @@ const RecipeCard = ({ meal, onClose }) => {
 };
 
 export default RecipeCard;
+
