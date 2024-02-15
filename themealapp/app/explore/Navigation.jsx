@@ -12,10 +12,7 @@ const Navigation = () => {
   };
 
   const handleSignOut = () => {
-    // Perform sign-out logic here
-    // For example, you can use your authentication library to sign the user out
-    // After signing out, redirect the user to the login page
-    // For demonstration purposes, you can use a placeholder URL like "/login"
+ 
     window.location.href = "/";
   };
 

@@ -5,6 +5,9 @@ const MealList = ({ selectedCategory }) => {
   const [meals, setMeals] = useState([]);
   const [selectedMeal, setSelectedMeal] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [mealsPerPage] = useState(9); // Change this value based on your preference
+  const [selectedPage, setSelectedPage] = useState(1);
 
   const fetchMeals = async () => {
     try {
@@ -24,6 +27,12 @@ const MealList = ({ selectedCategory }) => {
       console.error("Error:", error.message);
     }
   };
+
+  useEffect(() => {
+    if (selectedCategory) {
+      fetchMeals();
+    }
+  }, [selectedCategory]);
 
   const fetchMealDetails = async (mealId) => {
     try {
@@ -62,11 +71,13 @@ const MealList = ({ selectedCategory }) => {
     }
   };
 
-  useEffect(() => {
-    if (selectedCategory) {
-      fetchMeals();
-    }
-  }, [selectedCategory]);
+  // Logic to get current meals based on pagination
+  const indexOfLastMeal = currentPage * mealsPerPage;
+  const indexOfFirstMeal = indexOfLastMeal - mealsPerPage;
+  const currentMeals = meals.slice(indexOfFirstMeal, indexOfLastMeal);
+
+  // Change page
+  const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
   const handleCloseModal = () => {
     setIsModalOpen(false);
@@ -75,9 +86,25 @@ const MealList = ({ selectedCategory }) => {
 
   return (
     <>
+    <div className="flex justify-center items-center">
+      {Array.from({ length: Math.ceil(meals.length / mealsPerPage) }).map(
+        (item, index) => (
+          <button 
+            key={index} 
+            className={`text-xl mr-2 border-2 border-black rounded-full p-2 mb-6 ${selectedPage === index + 1 ? 'bg-orange text-white' : ''}`} // Change background color and text color if selected
+            onClick={() => {
+              setSelectedPage(index + 1); // Update the selected page
+              paginate(index + 1); // Call the paginate function with the selected page number
+            }}
+          >
+            {index + 1}
+          </button>
+        )
+      )}
+    </div>
       {!selectedMeal && (
         <section className="m-10 grid grid-cols-1 sm:grid-cols-3 gap-4">
-          {meals.map((meal) => (
+          {currentMeals.map((meal) => (
             <div
               key={meal.idMeal}
               className="border border-black hover:shadow-nav-shadow hover:bg-orange flex flex-col p-4 justify-center items-center cursor-pointer rounded-lg"
@@ -86,7 +113,6 @@ const MealList = ({ selectedCategory }) => {
               <img
                 src={meal.strMealThumb}
                 alt="meal picture"
-              
                 className="mb-4 w-full h-48 object-cover rounded-lg"
               />
               <p className="text-lg font-bold font-poppins">{meal.strMeal}</p>
@@ -98,8 +124,11 @@ const MealList = ({ selectedCategory }) => {
       {isModalOpen && selectedMeal && (
         <RecipeCard meal={selectedMeal} onClose={handleCloseModal} />
       )}
+
+
     </>
   );
 };
 
 export default MealList;
+

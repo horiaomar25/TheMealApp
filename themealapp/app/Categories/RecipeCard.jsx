@@ -57,15 +57,16 @@ const RecipeCard = ({ meal, onClose }) => {
       </span>
 
       {/* Meal image */}
-      <div className="flex justify-center items-center w-full overflow-auto">
+      <div className="flex flex-row justify-center items-center w-full overflow-auto">
         <img
           src={meal.strMealThumb}
           alt="meal picture"
           width={400}
           className="border-2 border-black rounded-lg"
         />
+     
       </div>
-
+   <p className="">{meal.strMeal}</p>
       {/* Ingredients and Instructions */}
       <div className="w-full p-4 rounded-lg flex flex-col md:flex-row items-center justify-center mt-6">
         <div className="w-1/2 rounded-lg p-6 mr-6 md:w-1/2">
