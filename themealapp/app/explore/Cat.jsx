@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Image from "next/image";
 
 const Cat = ({ categories, onSelectCategory }) => {
   const [selectedCategory, setSelectedCategory] = useState(null);
@@ -21,7 +22,10 @@ const Cat = ({ categories, onSelectCategory }) => {
             }`}
             onClick={() => handleCategoryClick(category.strCategory)}
           >
-            <p className="font-poppins text-lg">{category.strCategory}</p>
+            <div className="flex ">
+            <Image src={category.strCategoryThumb} width={50} height={50} className="mr-4"/>
+            <p className="font-poppins text-lg ">{category.strCategory}</p>
+            </div>
           </div>
         ))}
       </section>
