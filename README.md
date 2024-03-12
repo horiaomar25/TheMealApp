@@ -1,7 +1,7 @@
 # TheMealApp
 
 
-# EduTask
+# The Meal App
 
 
 
