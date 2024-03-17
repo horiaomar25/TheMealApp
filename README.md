@@ -1,8 +1,10 @@
 
 
-![The Meal App](https://github.com/horiaomar25/TheMealApp/assets/140801006/43ab4ce9-6fac-4263-b65f-008352347bb2)
 
 # TheMealApp
+
+![The Meal App](https://github.com/horiaomar25/TheMealApp/assets/140801006/43ab4ce9-6fac-4263-b65f-008352347bb2)
+
 This is a recipies application with authenication for the use to login. For the login, I used Supabase to help with Authenication. I was successfull able to log in and log out of my user. 
 To deal with the large amounts of data from the categories section, I used pagination. This was a new concept to learn about and I was able use great resoures such as Educative to guide me through this. 
 
