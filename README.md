@@ -1,5 +1,6 @@
-![The Meal App](https://github.com/horiaomar25/TheMealApp/assets/140801006/43ab4ce9-6fac-4263-b65f-008352347bb2)
 
+
+<div align=”center”>![The Meal App](https://github.com/horiaomar25/TheMealApp/assets/140801006/43ab4ce9-6fac-4263-b65f-008352347bb2)</div> 
 
 # TheMealApp
 This is a recipies application with authenication for the use to login. For the login, I used Supabase to help with Authenication. I was successfull able to log in and log out of my user. 
@@ -7,7 +8,6 @@ To deal with the large amounts of data from the categories section, I used pagin
 
 The data used is from the TheMealDB API. The user is able to click on the categories such as Chicken and see the list of chicken recipies. The user is able to click on the recipes and favourite their chosen recipe for quick access. I used localStorage to save the data into favourites as I am using a third party API. 
 
-<div align=”center”>  </div> 
 
 
 ## Table of Contents
