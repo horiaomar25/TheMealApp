@@ -1,6 +1,6 @@
 
 
-<div align=”center”>![The Meal App](https://github.com/horiaomar25/TheMealApp/assets/140801006/43ab4ce9-6fac-4263-b65f-008352347bb2)</div> 
+![The Meal App](https://github.com/horiaomar25/TheMealApp/assets/140801006/43ab4ce9-6fac-4263-b65f-008352347bb2)
 
 # TheMealApp
 This is a recipies application with authenication for the use to login. For the login, I used Supabase to help with Authenication. I was successfull able to log in and log out of my user. 
