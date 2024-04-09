@@ -18,15 +18,11 @@ const DropMenu = () => {
     router.push("/favourites");
   };
 
-  const profileHandler = () => {
-    router.push("/profile");
-  };
+
 
   return (
     <div className="absolute top-12 right-0 bg-white border p-4 mt-20 mr-2">
-      <button className="mb-2 mt-2 block" type="button" onClick={profileHandler}>
-        Profile
-      </button>
+      
       <button className="mb-2 block" type="button" onClick={handleClickFavourites}>
         Favourites
       </button>

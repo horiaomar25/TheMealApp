@@ -18,11 +18,7 @@ const Home = () => {
     <>
     <Navigation />
     <HeroSection />
-    <Cat
-        categories={categories}
-        onSelectCategory={handleCategoryClick}
-        selectedCategory={selectedCategory}
-      />
+   
     <LastestPicks />
 
   </>

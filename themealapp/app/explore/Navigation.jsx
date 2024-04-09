@@ -11,10 +11,7 @@ const Navigation = () => {
     setMenu(!menu);
   };
 
-  const handleSignOut = () => {
- 
-    window.location.href = "/";
-  };
+  
 
   return (
     <header className=" m-4  rounded-md">
@@ -43,7 +40,7 @@ const Navigation = () => {
             width={100}
           />
 
-          {menu && <DropMenu handleSignOut={handleSignOut} />}
+          {menu && <DropMenu  />}
           {/* Render the DropdownMenu when menu is true */}
         </div>
       </nav>
