@@ -1,18 +1,9 @@
 import React from "react";
 import { useRouter } from "next/navigation";
-import { createClient } from "@supabase/supabase-js";
 
 const DropMenu = () => {
   const router = useRouter();
-  const supabase = createClient(
-    "https://boxkznfnxnciiwxzpihk.supabase.co",
-    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJveGt6bmZueG5jaWl3eHpwaWhrIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MDU3NDk0NzAsImV4cCI6MjAyMTMyNTQ3MH0.GhajM_RhfKiOvHWfhBvtklihIYCG996-RrnmmrJYPok"
-  );
-
-  const signOutHandler = async () => {
-    await supabase.auth.signOut();
-    router.push("/");
-  };
+  
 
   const handleClickFavourites = () => {
     router.push("/favourites");
@@ -26,7 +17,7 @@ const DropMenu = () => {
       <button className="mb-2 block" type="button" onClick={handleClickFavourites}>
         Favourites
       </button>
-      <button className="button block text-center" type="button" onClick={signOutHandler}>
+      <button className="button block text-center" type="button" >
         Sign Out
       </button>
     </div>

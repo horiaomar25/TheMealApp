@@ -5,7 +5,7 @@ import Navigation from "./Navigation";
 import MealList from "../Categories/MealList";
 import FetchCategories from "../Custom Hooks/FetchCategories";
 import HomeLayout from "./HomeLayout";
-import Cat from "./Cat";
+
 
 export default function Home() {
   const { categories } = FetchCategories();

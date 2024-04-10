@@ -2,7 +2,7 @@
 import Navigation from "./explore/Navigation"
 import HeroSection from "./home/HeroSection"
 import LastestPicks from "./home/LastestPicks"
-import Cat from "./explore/Cat"
+import Cat from "./Categories/Categories"
 import FetchCategories from "./Custom Hooks/FetchCategories"
 import { useState } from "react"
 

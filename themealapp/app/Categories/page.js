@@ -2,7 +2,7 @@
 
 import FetchCategories from "../Custom Hooks/FetchCategories";
 import { useState } from "react";
-import Cat from "../explore/Cat";
+import Cat from "./Categories";
 import Navigation from "../explore/Navigation";
 import MealList from "./MealList";
 

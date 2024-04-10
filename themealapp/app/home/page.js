@@ -1,11 +1,10 @@
-"use client"
-import Navigation from "../explore/Navigation"
-import HeroSection from "./HeroSection"
-import LastestPicks from "./LastestPicks"
-import Cat from "../explore/Cat"
-import FetchCategories from "../Custom Hooks/FetchCategories"
-import { useState } from "react"
-
+"use client";
+import Navigation from "../explore/Navigation";
+import HeroSection from "./HeroSection";
+import LastestPicks from "./LastestPicks";
+import Cat from "../Categories/Categories";
+import FetchCategories from "../Custom Hooks/FetchCategories";
+import { useState } from "react";
 
 const Home = () => {
   const { categories } = FetchCategories();
@@ -16,14 +15,11 @@ const Home = () => {
   };
   return (
     <>
-    <Navigation />
-    <HeroSection />
-   
-    <LastestPicks />
+      <Navigation />
+      <HeroSection />
+      <LastestPicks />
+    </>
+  );
+};
 
-  </>
-  )
-
-}
-
-export default Home
+export default Home;

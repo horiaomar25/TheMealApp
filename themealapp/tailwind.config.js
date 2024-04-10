@@ -32,16 +32,13 @@ module.exports = {
           to: { height: "0" },
         },
       },
-      animation: {
-        "accordion-down": "accordion-down 0.2s ease-out",
-        "accordion-up": "accordion-up 0.2s ease-out",
-      },
+      
       boxShadow: {
-        'nav-shadow': '0 4px 30px rgba(255, 255, 255, 0.8);'
+        'nav-shadow': "0 4px 30px rgba(248, 135, 73, 0.5);"
       },
       /* Define hover effect for boxShadow */
       hover: {
-        'nav-shadow': '0 4px 30px rgba(255, 255, 255, 0.8);'
+        'nav-shadow': "0 4px 30px rgba(248, 135, 73, 0.8);"
       },
       backgroundImage: {
         'custom-image': "url('/public/pasta.png')",
