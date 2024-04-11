@@ -66,18 +66,18 @@ const RecipeCard = ({ meal, onClose }) => {
         />
      
       </div>
-      <p className='font-poppins text-2xl font-bold m-4 ml-10'>{meal.strMeal}</p>
+      <p className='font-poppins text-2xl font-bold m-4 ml-10 text-black'>{meal.strMeal}</p>
       {/* Ingredients and Instructions */}
       <div className="w-full p-4 rounded-lg flex flex-col md:flex-row items-start justify-center mt-6">
         <div className="w-full md:w-1/2 rounded-lg p-6 mr-6">
-          <h2 className="text-xl font-bold mt-2 mb-4 text-center">
+          <h2 className="text-xl font-bold mt-2 mb-4 text-center text-black">
             Ingredients:
           </h2>
           <div className="flex flex-wrap justify-between">
             {ingredients.map((ingredient, index) => (
               <div key={index} className="w-1/2">
                 <ul className="space-y-2">
-                  <li className="flex items-center text-lg">
+                  <li className="flex items-center text-lg text-black">
                     {ingredient}
                   </li>
                 </ul>
@@ -86,12 +86,12 @@ const RecipeCard = ({ meal, onClose }) => {
           </div>
         </div>
         <div className="w-full md:w-1/2">
-          <h2 className="text-xl font-bold mt-4 md:mt-2 text-center">Instructions:</h2>
+          <h2 className="text-xl font-bold mt-4 md:mt-2 text-center  text-black">Instructions:</h2>
           {Array.from(
             { length: Math.ceil(instructions.length / 3) },
             (v, i) => i
           ).map((index) => (
-            <p key={index} className="mb-2">
+            <p key={index} className="mb-2 text-black">
               {instructions.slice(index * 3, index * 3 + 3).join(". ")}.
             </p>
           ))}

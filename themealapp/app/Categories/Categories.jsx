@@ -11,7 +11,7 @@ const Cat = ({ categories, onSelectCategory }) => {
 
   return (
     <>
-     <h2 className="text-4xl font-bold m-4">Categories</h2>
+     <h2 className="text-4xl font-bold m-4 text-black">Categories</h2>
 
       <section className="m-6 text-center grid grid-cols-1 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
         {categories.map((category) => (
@@ -24,7 +24,7 @@ const Cat = ({ categories, onSelectCategory }) => {
           >
             <div className="flex ">
             <Image src={category.strCategoryThumb} width={50} height={50} className="mr-4"/>
-            <p className="font-poppins text-lg ">{category.strCategory}</p>
+            <p className="font-poppins text-lg text-black ">{category.strCategory}</p>
             </div>
           </div>
         ))}

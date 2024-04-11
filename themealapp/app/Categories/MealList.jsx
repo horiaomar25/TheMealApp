@@ -93,7 +93,7 @@ const MealList = ({ selectedCategory }) => {
               (item, index) => (
                 <button
                   key={index}
-                  className={`text-xl mr-2 border-2 border-black rounded-full p-2 mb-6 ${selectedPage === index + 1 ? 'bg-orange text-white' : ''}`} // Change background color and text color if selected
+                  className={`text-xl mr-2 border-2 border-black rounded-full p-2 mb-6  text-black ${selectedPage === index + 1 ? 'bg-orange text-white' : ''}`} // Change background color and text color if selected
                   onClick={() => {
                     setSelectedPage(index + 1); // Update the selected page
                     paginate(index + 1); // Call the paginate function with the selected page number
@@ -104,7 +104,7 @@ const MealList = ({ selectedCategory }) => {
               )
             )}
           </div>
-          <p className='font-poppins text-4xl font-bold m-4 ml-10'>Category Selected: {selectedCategory}</p>
+          <p className='font-poppins text-4xl font-bold m-4 ml-10 text-black'>Category Selected: {selectedCategory}</p>
         </>
       )}
 
@@ -121,7 +121,7 @@ const MealList = ({ selectedCategory }) => {
                 alt="meal picture"
                 className="mb-4 w-full h-48 object-cover rounded-lg"
               />
-              <p className="text-lg font-bold font-poppins">{meal.strMeal}</p>
+              <p className="text-lg font-bold font-poppins text-black">{meal.strMeal}</p>
             </div>
           ))}
         </section>

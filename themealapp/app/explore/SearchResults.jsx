@@ -29,9 +29,11 @@ const SearchResults = () => {
     const mealsForPage = searchResults.slice(indexOfFirstMeal, indexOfLastMeal);
   
     return mealsForPage.map((meal) => (
+
+      
       <div
         key={meal.idMeal}
-        className="border border-black hover:bg-orange flex flex-col p-4 justify-center items-center cursor-pointer rounded-lg"
+        className="border border-black  hover:bg-orange flex flex-col p-4 justify-center items-center cursor-pointer rounded-lg"
         onClick={() => handleMealClick(meal)}
       >
         <img
@@ -40,7 +42,7 @@ const SearchResults = () => {
           width={300}
           className="mb-4 w-full h-48 object-cover rounded-lg"
         />
-        <p className="text-lg font-bold font-poppins">{meal.strMeal}</p>
+        <p className="text-lg font-bold font-poppins text-black">{meal.strMeal}</p>
       </div>
     ));
   };

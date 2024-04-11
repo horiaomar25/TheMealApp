@@ -15,7 +15,7 @@ export default function HomeLayou({ children }) {
   return (
     <html lang="en">
       
-      <body className="bg-yellow" >{children}</body>
+      <body className="bg-yellow text-black" >{children}</body>
     </html>
   )
 }

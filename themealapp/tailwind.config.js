@@ -13,13 +13,10 @@ module.exports = {
       padding: "2rem",
       screens: {
         sm: '640px',
-      md: '768px',
-      lg: '1024px',
-      xl: '1280px',
+        md: '768px',
+        lg: '1024px',
+        xl: '1280px',
       },
-      backgroundImage: theme => ({
-        'gradient-yellow': 'linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,147,15,1) 0%, rgba(255,249,91,1) 100%)',
-      }),
     },
     extend: {
       keyframes: {
@@ -32,27 +29,32 @@ module.exports = {
           to: { height: "0" },
         },
       },
-      
       boxShadow: {
         'nav-shadow': "0 4px 30px rgba(248, 135, 73, 0.5);"
       },
-      /* Define hover effect for boxShadow */
       hover: {
         'nav-shadow': "0 4px 30px rgba(248, 135, 73, 0.8);"
       },
       backgroundImage: {
         'custom-image': "url('/public/pasta.png')",
-       'yellow': '#f09819',
+        'yellow': '#f09819',
       },
       colors: {
-       
         'orange': '#F88749',
         'yellow': '#FCF0BB',
         'blue': '#eaeefe',
-        
+      },
+    },
+    daisyui: {
+      themes: {
+        "black-on-yellow": { // Name of the new theme
+          "primary": "#000000", // Black text color
+          "bg-primary": '#FCF0BB', // Yellow background color
+          "neutral": "#000000",
+          "white": "#FFFFFF",
+        },
       },
     },
   },
-  plugins: [require("tailwindcss-animate")],
-}
-
+  plugins: [require("daisyui")],
+};
