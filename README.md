@@ -22,7 +22,8 @@ The data used is from the TheMealDB API. The user is able to click on the catego
 - [Usage](#usage)
 
 ## Tech Stack
-This was built using NextJS. I used Tailwind to style the application and used the config file to store 
+- Next.js - made use of the router to create a Home Page, Search, Categories, Favourites
+- Styled with DaisyUI and TailwindCSS.
 
 
 ## Server/Database
@@ -33,10 +34,13 @@ I used localStorage to store the selected recipies into the favourites of my use
 ## Lessons Learned
 In this project, this was my first time implementing pagination and using localStorage. Furthermore, it was great learing more about Supabase and Authenication. The documentation was simple and easy to understand. 
 
+I was make use of slice and map to manipulate the data to display in the way I wanted. I really enjoyed 
+
 ## Future Scope
-Looking to improve the homepage. 
-Dark Mode to implemented.
-Will work on testing this. 
+Looking to improve the homepage. Dark Mode to implemented. Will work on testing this. 
+
+Currently to looking implement a server that will store the ingredients provide by theMealDB API to create a shopping list for the user!
+
 
 ## Installation
 
