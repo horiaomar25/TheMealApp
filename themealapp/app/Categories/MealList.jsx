@@ -88,7 +88,7 @@ const MealList = ({ selectedCategory }) => {
     <>
       {!selectedMeal && (
         <>
-          <div className="flex justify-center items-center">
+          <div className="flex justify-center items-center  ">
             {Array.from({ length: Math.ceil(meals.length / mealsPerPage) }).map(
               (item, index) => (
                 <button

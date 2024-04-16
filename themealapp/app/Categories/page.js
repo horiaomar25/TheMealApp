@@ -4,7 +4,9 @@ import FetchCategories from "../Custom Hooks/FetchCategories";
 import { useState } from "react";
 import Cat from "./Categories";
 import Navigation from "../explore/Navigation";
-import MealList from "./MealList";
+import MealList from "./MealList"
+
+
 
 export const Categories = () => {
   const { categories } = FetchCategories();
@@ -16,6 +18,8 @@ export const Categories = () => {
 
   return (
     <>
+    
+
       <Navigation />
       <Cat
         categories={categories}
@@ -23,6 +27,7 @@ export const Categories = () => {
         selectedCategory={selectedCategory}
       />
       {selectedCategory && <MealList selectedCategory={selectedCategory} />}
+
     </>
   );
 };

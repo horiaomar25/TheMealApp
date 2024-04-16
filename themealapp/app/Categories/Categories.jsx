@@ -13,7 +13,9 @@ const Cat = ({ categories, onSelectCategory }) => {
     <>
      <h2 className="text-4xl font-bold m-4 text-black">Categories</h2>
 
-      <section className="m-6 text-center grid grid-cols-1 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
+    
+
+      <section className="m-6 text-center grid grid-cols-1 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4 bg-yellow " >
         {categories.map((category) => (
           <div
             key={category.idCategory}

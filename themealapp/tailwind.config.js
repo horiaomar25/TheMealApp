@@ -1,10 +1,13 @@
+
+
 module.exports = {
   darkMode: ["class"],
   content: [
-    './pages/**/*.{js,jsx}',
-    './components/**/*.{js,jsx}',
-    './app/**/*.{js,jsx}',
-    './src/**/*.{js,jsx}',
+    "./pages/**/*.{js,jsx}",
+    "./components/**/*.{js,jsx}",
+    "./app/**/*.{js,jsx}",
+    "./src/**/*.{js,jsx}",
+    "node_modules/daisyui/daisyui/**/*.{js.jsx,ts,tsx}"
   ],
   prefix: "",
   theme: {
@@ -12,10 +15,10 @@ module.exports = {
       center: true,
       padding: "2rem",
       screens: {
-        sm: '640px',
-        md: '768px',
-        lg: '1024px',
-        xl: '1280px',
+        sm: "640px",
+        md: "768px",
+        lg: "1024px",
+        xl: "1280px",
       },
     },
     extend: {
@@ -30,31 +33,25 @@ module.exports = {
         },
       },
       boxShadow: {
-        'nav-shadow': "0 4px 30px rgba(248, 135, 73, 0.5);"
+        "nav-shadow": "0 4px 30px rgba(248, 135, 73, 0.5);",
       },
       hover: {
-        'nav-shadow': "0 4px 30px rgba(248, 135, 73, 0.8);"
+        "nav-shadow": "0 4px 30px rgba(248, 135, 73, 0.8);",
       },
       backgroundImage: {
-        'custom-image': "url('/public/pasta.png')",
-        'yellow': '#f09819',
+        "custom-image": "url('/public/pasta.png')",
+        yellow: "#f09819",
       },
       colors: {
-        'orange': '#F88749',
-        'yellow': '#FCF0BB',
-        'blue': '#eaeefe',
-      },
-    },
-    daisyui: {
-      themes: {
-        "black-on-yellow": { // Name of the new theme
-          "primary": "#000000", // Black text color
-          "bg-primary": '#FCF0BB', // Yellow background color
-          "neutral": "#000000",
-          "white": "#FFFFFF",
-        },
+        orange: "#F88749",
+        yellow: "#FCF0BB",
+        blue: "#eaeefe",
       },
     },
   },
+  daisyui: {
+    themes: [],
+  }, // This closing brace was missing in the previous response
   plugins: [require("daisyui")],
 };
+

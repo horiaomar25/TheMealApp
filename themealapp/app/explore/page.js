@@ -4,7 +4,7 @@ import SearchResults from "./SearchResults";
 import Navigation from "./Navigation";
 import MealList from "../Categories/MealList";
 import FetchCategories from "../Custom Hooks/FetchCategories";
-import HomeLayout from "./HomeLayout";
+
 
 
 export default function Home() {
@@ -23,14 +23,14 @@ export default function Home() {
 
   return (
     <>
-      <HomeLayout>
-        <Navigation />
+   
+        <Navigation/>
         <SearchResults showResults={handleSearchResults} />
        
         {selectedCategory && !showSearchResults && (
           <MealList selectedCategory={selectedCategory} />
         )}
-      </HomeLayout>
+  
     </>
   );
 }

@@ -146,7 +146,7 @@ const LatestPicks = () => {
 
   return (
     <>
-  <h1 className="text-4xl font-bold m-6">Latest Picks</h1>
+  <h1 className="text-4xl font-bold m-6 text-black">Latest Picks</h1>
   <section className="flex justify-center"> {/* Use flexbox to center the section */}
     <div className="m-6 grid grid-cols-1 sm:grid-cols-3 gap-4 ">
       {meals.map((meal) => (

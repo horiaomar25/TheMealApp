@@ -29,7 +29,7 @@ const SearchInput = ({ setSearchResults }) => {
   };
 
   return (
-    <section className="flex flex-row justify-center items-center sm:w-auto">
+    <section className="flex flex-row justify-center items-center sm:w-auto  " >
   <form onSubmit={handleFormSubmit} className="flex flex-row items-center">
     
     <input
