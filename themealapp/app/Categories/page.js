@@ -1,14 +1,14 @@
 "use client";
 
-import FetchCategories from "../Custom Hooks/FetchCategories";
+import FetchCategories from "../Custom Hooks/UseCategories";
 import { useState } from "react";
-import Cat from "./Categories";
+import Categories from "./Categories";
 import Navigation from "../explore/Navigation";
 import MealList from "./MealList"
 
 
 
-export const Categories = () => {
+export const CategoriesPage = () => {
   const { categories } = FetchCategories();
   const [selectedCategory, setSelectedCategory] = useState("");
 
@@ -21,7 +21,7 @@ export const Categories = () => {
     
 
       <Navigation />
-      <Cat
+      <Categories
         categories={categories}
         onSelectCategory={handleCategoryClick}
         selectedCategory={selectedCategory}

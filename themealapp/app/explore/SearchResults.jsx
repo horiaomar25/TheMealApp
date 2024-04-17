@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import SearchInput from "./SearchInput";
 import RecipeCard from "../Categories/RecipeCard"; // Import the RecipeCard component
+import Image from "next/image";
 
 const SearchResults = () => {
   const [searchResults, setSearchResults] = useState([]);
@@ -36,7 +37,7 @@ const SearchResults = () => {
         className="border border-black  hover:bg-orange flex flex-col p-4 justify-center items-center cursor-pointer rounded-lg"
         onClick={() => handleMealClick(meal)}
       >
-        <img
+        <Image
           src={meal.strMealThumb}
           alt={meal.strMeal}
           width={300}

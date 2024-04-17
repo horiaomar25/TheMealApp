@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Image from "next/image";
 
-const Cat = ({ categories, onSelectCategory }) => {
+const Categories = ({ categories, onSelectCategory }) => {
   const [selectedCategory, setSelectedCategory] = useState(null);
 
   const handleCategoryClick = (category) => {
@@ -25,7 +25,7 @@ const Cat = ({ categories, onSelectCategory }) => {
             onClick={() => handleCategoryClick(category.strCategory)}
           >
             <div className="flex ">
-            <Image src={category.strCategoryThumb} width={50} height={50} className="mr-4"/>
+            <Image src={category.strCategoryThumb} width={50} height={50} className="mr-4" alt={category.strCategoryThumb}/>
             <p className="font-poppins text-lg text-black ">{category.strCategory}</p>
             </div>
           </div>
@@ -35,4 +35,4 @@ const Cat = ({ categories, onSelectCategory }) => {
   );
 };
 
-export default Cat;
+export default Categories;

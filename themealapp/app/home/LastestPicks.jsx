@@ -1,5 +1,5 @@
 import React from 'react';
-
+import Image from "next/image"
 
 const LatestPicks = () => {
   const meals = [
@@ -150,8 +150,8 @@ const LatestPicks = () => {
   <section className="flex justify-center"> {/* Use flexbox to center the section */}
     <div className="m-6 grid grid-cols-1 sm:grid-cols-3 gap-4 ">
       {meals.map((meal) => (
-        <div key={meal.idMeal} className="flex flex-col justify-center items-center p-6 w-80 rounded-lg m-6 border border-black hover:bg-orange">
-          <img src={meal.strMealThumb} alt={meal.strMeal} width={400} />
+        <div key={meal.idMeal} className="flex flex-col justify-center items-center p-6 w-80 rounded-lg m-6 border border-black hover:bg-orange"> 
+          <Image src={meal.strMealThumb} alt={meal.strMeal} width={400} />
           <h5 className="mt-4 ">{meal.strMeal}</h5>
         </div>
       ))}

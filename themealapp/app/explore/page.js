@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import SearchResults from "./SearchResults";
 import Navigation from "./Navigation";
 import MealList from "../Categories/MealList";
-import FetchCategories from "../Custom Hooks/FetchCategories";
+import FetchCategories from "../Custom Hooks/UseCategories";
 
 
 

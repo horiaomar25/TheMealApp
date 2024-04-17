@@ -1,6 +1,7 @@
 "use client"
 import React, { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 const Navigation = () => {
  
@@ -17,7 +18,7 @@ const Navigation = () => {
               </button>
           </div>
           <div className="flex-1 justify-center mb-8">
-              <a className="btn btn-ghost text-xl"><img
+              <a className="btn btn-ghost text-xl"><Image
                   src="./cooking.png"
                   alt="logo"
                   width={80} /></a>
@@ -40,7 +41,7 @@ const Navigation = () => {
                       <ul className="menu p-4 w-80 min-h-full bg-yellow ">
                           {/* Sidebar content here */}
 
-                          <img
+                          <Image
                               
                               src="./avatar.png"
                               alt="avatar"

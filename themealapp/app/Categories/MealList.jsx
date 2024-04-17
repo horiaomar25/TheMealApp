@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import RecipeCard from "./RecipeCard";
+import Image from "next/image";
 
 const MealList = ({ selectedCategory }) => {
   const [meals, setMeals] = useState([]);
@@ -116,9 +117,9 @@ const MealList = ({ selectedCategory }) => {
               className="border border-black hover:shadow-nav-shadow hover:bg-orange flex flex-col p-4 justify-center items-center cursor-pointer rounded-lg"
               onClick={() => fetchMealDetails(meal.idMeal)}
             >
-              <img
+              <Image
                 src={meal.strMealThumb}
-                alt="meal picture"
+                alt={meal.strMeal}
                 className="mb-4 w-full h-48 object-cover rounded-lg"
               />
               <p className="text-lg font-bold font-poppins text-black">{meal.strMeal}</p>
