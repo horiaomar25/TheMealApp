@@ -3,12 +3,12 @@ import React, { useState } from "react";
 import SearchResults from "./SearchResults";
 import Navigation from "./Navigation";
 import MealList from "../Categories/MealList";
-import FetchCategories from "../Custom Hooks/UseCategories";
+
 
 
 
 export default function Home() {
-  const { categories } = FetchCategories();
+
   const [selectedCategory, setSelectedCategory] = useState("");
   const [showSearchResults, setShowSearchResults] = useState(false);
 
