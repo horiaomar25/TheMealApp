@@ -151,7 +151,7 @@ const LatestPicks = () => {
     <div className="m-6 grid grid-cols-1 sm:grid-cols-3 gap-4 ">
       {meals.map((meal) => (
         <div key={meal.idMeal} className="flex flex-col justify-center items-center p-6 w-80 rounded-lg m-6 border border-black hover:bg-orange"> 
-          <Image src={meal.strMealThumb} alt={meal.strMeal} width={400} />
+          <Image src={meal.strMealThumb} alt={meal.strMeal} width={400} height={20} />
           <h5 className="mt-4 ">{meal.strMeal}</h5>
         </div>
       ))}

@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 
+
 const Navigation = () => {
  
 
@@ -18,10 +19,18 @@ const Navigation = () => {
               </button>
           </div>
           <div className="flex-1 justify-center mb-8">
-              <a className="btn btn-ghost text-xl"><Image
-                  src="./cooking.png"
-                  alt="logo"
-                  width={80} /></a>
+              <a className="btn btn-ghost text-xl">
+              <Image
+  src="/cooking.png"
+  alt="image of a pizza"
+  width={70}
+  height={20}
+  priority={true} // Using boolean value instead of string
+  style={{ width: "50%", height: "auto" }} // Maintain aspect ratio
+/>
+
+              
+                  </a>
           </div>
           <div className="flex-none">
               <button className="btn btn-square btn-ghost">
@@ -40,12 +49,16 @@ const Navigation = () => {
                       ></label>
                       <ul className="menu p-4 w-80 min-h-full bg-yellow ">
                           {/* Sidebar content here */}
-
+{/*Maintain aspect ratio for console.warning*/}
                           <Image
-                              
-                              src="./avatar.png"
-                              alt="avatar"
-                              width={100} />
+  src="/avatar.png"
+  alt="avatar"
+  width={100}
+  height={100}
+  priority={true} // Using boolean value instead of string
+  style={{ width: "100%", height: "auto" }} // Maintain aspect ratio
+/>
+
                           <li>
                              <Link href="/">Home</Link> 
                           </li>
