@@ -7,7 +7,7 @@ module.exports = {
     "./components/**/*.{js,jsx}",
     "./app/**/*.{js,jsx}",
     "./src/**/*.{js,jsx}",
-    "node_modules/daisyui/daisyui/**/*.{js.jsx,ts,tsx}"
+    "./node_modules/daisyui/**/*.{js,jsx,ts,tsx}"
   ],
   prefix: "",
   theme: {
