@@ -1,5 +1,3 @@
-
-
 module.exports = {
   darkMode: ["class"],
   content: [
@@ -7,7 +5,7 @@ module.exports = {
     "./components/**/*.{js,jsx}",
     "./app/**/*.{js,jsx}",
     "./src/**/*.{js,jsx}",
-    "./node_modules/daisyui/**/*.{js,jsx,ts,tsx}"
+    "./node_modules/daisyui/**/*.{js,jsx,ts,tsx}",
   ],
   prefix: "",
   theme: {
@@ -49,9 +47,6 @@ module.exports = {
       },
     },
   },
-  daisyui: {
-    themes: [],
-  }, // This closing brace was missing in the previous response
+   // This closing brace was missing in the previous response
   plugins: [require("daisyui")],
 };
-
