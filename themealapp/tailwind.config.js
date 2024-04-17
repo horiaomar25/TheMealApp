@@ -47,6 +47,8 @@ module.exports = {
       },
     },
   },
-   // This closing brace was missing in the previous response
+  daisyui: {
+    themes: [],
+  }, // This closing brace was missing in the previous response
   plugins: [require("daisyui")],
 };
