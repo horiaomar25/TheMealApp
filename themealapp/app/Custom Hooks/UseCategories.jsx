@@ -33,4 +33,4 @@ const UseCategories = () => {
   };
 };
 
-export default FetchCategories;
+export default UseCategories;

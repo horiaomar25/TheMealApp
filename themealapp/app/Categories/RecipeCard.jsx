@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import Image from "next/image";
 
 const RecipeCard = ({ meal, onClose }) => {
   const [favourites, setFavourites] = useState(
@@ -43,22 +44,22 @@ const RecipeCard = ({ meal, onClose }) => {
         className="absolute top-0 left-0 m-4 text-3xl cursor-pointer"
         onClick={onClose}
       >
-        <img src="./back-arrow.png" alt="arrow icon" />
+        <Image src="./back-arrow.png" alt="arrow icon" />
       </span>
       <span
         className="absolute top-0 right-0 m-4 text-3xl cursor-pointer"
         onClick={handleFavourite}
       >
         {isFavourite ? (
-          <img src="/lover.png" alt="favorite icon" width={30} className="m-30" />
+          <Image src="/lover.png" alt="favorite icon" width={30} className="m-30" />
         ) : (
-          <img src="/heart.png" alt="favorite icon" width={30} />
+          <Image src="/heart.png" alt="favorite icon" width={30} />
         )}
       </span>
 
       {/* Meal image */}
       <div className="flex flex-row justify-center items-center w-full overflow-auto">
-        <img
+        <Image
           src={meal.strMealThumb}
           alt="meal picture"
           width={400}
