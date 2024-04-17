@@ -1,3 +1,4 @@
+"use client"
 import React, { useState } from "react";
 import Image from "next/image";
 
@@ -25,7 +26,14 @@ const Categories = ({ categories, onSelectCategory }) => {
             onClick={() => handleCategoryClick(category.strCategory)}
           >
             <div className="flex ">
-            <Image src={category.strCategoryThumb} width={50} height={50} className="mr-4" alt={category.strCategoryThumb}/>
+            <Image
+    src={category.strCategoryThumb}
+    width={50}
+    height={50}
+    style={{ width: "auto" }} // Add this style to maintain aspect ratio
+    className="mr-4"
+    alt={category.strCategoryThumb}
+/>
             <p className="font-poppins text-lg text-black ">{category.strCategory}</p>
             </div>
           </div>

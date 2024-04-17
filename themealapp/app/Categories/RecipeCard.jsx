@@ -44,16 +44,23 @@ const RecipeCard = ({ meal, onClose }) => {
         className="absolute top-0 left-0 m-4 text-3xl cursor-pointer"
         onClick={onClose}
       >
-        <Image src="./back-arrow.png" alt="arrow icon" />
+        <Image
+    src="/back-arrow.png"
+    alt="arrow icon"
+    width={100}
+    height={100}
+    style={{ width: "auto" }} // Add this style to maintain aspect ratio
+/>
+
       </span>
       <span
         className="absolute top-0 right-0 m-4 text-3xl cursor-pointer"
         onClick={handleFavourite}
       >
         {isFavourite ? (
-          <Image src="/lover.png" alt="favorite icon" width={30} className="m-30" />
+          <Image src="/lover.png" alt="favorite icon" width={30} height={30} className="m-30" />
         ) : (
-          <Image src="/heart.png" alt="favorite icon" width={30} />
+          <Image src="/heart.png" alt="favorite icon" width={30} height={30} />
         )}
       </span>
 
@@ -63,6 +70,7 @@ const RecipeCard = ({ meal, onClose }) => {
           src={meal.strMealThumb}
           alt="meal picture"
           width={400}
+          height={100}
           className="border-2 border-black rounded-lg mt-10"
         />
      

@@ -11,6 +11,7 @@ import MealList from "./MealList"
 export const CategoriesPage = () => {
   const { categories } = UseCategories();
   const [selectedCategory, setSelectedCategory] = useState("");
+  console.log(categories)
 
   const handleCategoryClick = (category) => {
     setSelectedCategory(category);
@@ -33,4 +34,4 @@ export const CategoriesPage = () => {
 };
 
 
-export default Categories;
+export default CategoriesPage;
