@@ -120,10 +120,9 @@ const MealList = ({ selectedCategory }) => {
               <Image
     src={meal.strMealThumb}
     alt={meal.strMeal}
-    className="mb-4 w-full h-48 object-cover rounded-lg"
-    width={100}
-    height={100}
-    style={{ width: "auto" }} // Add this style to maintain aspect ratio
+    width={300}
+    height={300}
+    className="mb-4 w-full h-48 object-cover rounded-lg"// Add this style to maintain aspect ratio
 />
 
               <p className="text-lg font-bold font-poppins text-black">{meal.strMeal}</p>

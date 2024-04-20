@@ -38,64 +38,50 @@ const RecipeCard = ({ meal, onClose }) => {
   };
 
   return (
-    <div className="w-full  bg-yellow p-8  flex flex-col justify-center items-center">
+    <div className="w-full bg-yellow p-8 rounded-lg">
       {/* Header section */}
-      <span
-        className="absolute top-0 left-0 m-4 text-3xl cursor-pointer"
-        onClick={onClose}
-      >
-        <Image
-    src="/back-arrow.png"
-    alt="arrow icon"
-    width={100}
-    height={100}
-    style={{ width: "auto" }} // Add this style to maintain aspect ratio
-/>
-
-      </span>
-      <span
-        className="absolute top-0 right-0 m-4 text-3xl cursor-pointer"
-        onClick={handleFavourite}
-      >
-        {isFavourite ? (
-          <Image src="/lover.png" alt="favorite icon" width={30} height={30} className="m-30" />
-        ) : (
-          <Image src="/heart.png" alt="favorite icon" width={30} height={30} />
-        )}
-      </span>
+      <div className="flex justify-between items-center mb-4">
+        <button className="text-3xl" onClick={onClose}>
+          <Image src="/back-arrow.png" alt="arrow icon" width={30} height={100} />
+        </button>
+        <button className="text-3xl" onClick={handleFavourite}>
+          {isFavourite ? (
+            <Image src="/lover.png" alt="favorite icon" width={30} height={30} />
+          ) : (
+            <Image src="/heart.png" alt="favorite icon" width={30} height={30} />
+          )}
+        </button>
+      </div>
 
       {/* Meal image */}
-      <div className="flex flex-row justify-center items-center w-full overflow-auto">
+      <div className="flex justify-center items-center mb-4">
         <Image
           src={meal.strMealThumb}
           alt="meal picture"
           width={400}
           height={100}
-          className="border-2 border-black rounded-lg mt-10"
+          className="border-2 border-black rounded-lg"
         />
-     
       </div>
-      <p className='font-poppins text-2xl font-bold m-4 ml-10 text-black'>{meal.strMeal}</p>
+
+      <p className="font-poppins text-2xl font-bold mb-4 text-black text-center">{meal.strMeal}</p>
+
       {/* Ingredients and Instructions */}
-      <div className="w-full p-4 rounded-lg flex flex-col md:flex-row items-start justify-center mt-6">
-        <div className="w-full md:w-1/2 rounded-lg p-6 mr-6">
-          <h2 className="text-xl font-bold mt-2 mb-4 text-center text-black">
-            Ingredients:
-          </h2>
+      <div className="w-full p-4 rounded-lg flex flex-col md:flex-row items-start justify-center">
+        <div className="w-full md:w-1/2 rounded-lg p-6 mr-6 mb-4 md:mb-0">
+          <h2 className="text-xl font-bold mb-4  text-black  ">Ingredients:</h2>
           <div className="flex flex-wrap justify-between">
             {ingredients.map((ingredient, index) => (
               <div key={index} className="w-1/2">
                 <ul className="space-y-2">
-                  <li className="flex items-center text-lg text-black">
-                    {ingredient}
-                  </li>
+                  <li className="flex items-center text-lg text-black">{ingredient}</li>
                 </ul>
               </div>
             ))}
           </div>
         </div>
         <div className="w-full md:w-1/2">
-          <h2 className="text-xl font-bold mt-4 md:mt-2 text-center  text-black">Instructions:</h2>
+          <h2 className="text-xl font-bold mb-4 md:mb-2 text-center text-black">Instructions:</h2>
           {Array.from(
             { length: Math.ceil(instructions.length / 3) },
             (v, i) => i
@@ -111,4 +97,5 @@ const RecipeCard = ({ meal, onClose }) => {
 };
 
 export default RecipeCard;
+
 
