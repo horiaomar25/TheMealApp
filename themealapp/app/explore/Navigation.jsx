@@ -47,7 +47,7 @@ const Navigation = () => {
                           aria-label="close sidebar"
                           className="drawer-overlay"
                       ></label>
-                      <ul className="menu p-4 w-80 min-h-full bg-yellow ">
+                      <ul className="menu p-4 w-80 min-h-full bg-yellow text-center ">
                           {/* Sidebar content here */}
 {/*Maintain aspect ratio for console.warning*/}
                           <Image
@@ -56,17 +56,17 @@ const Navigation = () => {
   width={100}
   height={100}
   priority={true} // Using boolean value instead of string
-  style={{ width: "100%", height: "auto" }} // Maintain aspect ratio
+  style={{ width: "50%", height: "auto", marginBottom: "10px" }}// Maintain aspect ratio
 />
 
-                          <li>
-                             <Link href="/">Home</Link> 
+                          <li className="hover:bg-orange hover:w-full hover:border rounded-md text-lg">
+                             <Link href="/" className="text-center">Home</Link> 
                           </li>
-                          <li>
+                          <li className="hover:bg-orange hover:w-full hover:border rounded-md text-lg">
                           <Link href="/explore">Explore</Link> 
                           </li>
 
-                          <li>
+                          <li className="hover:bg-orange hover:w-full hover:border rounded-md text-lg">
                           <Link href="/Categories">Catergories</Link> 
                           </li>
                       </ul>

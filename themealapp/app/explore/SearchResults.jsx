@@ -41,6 +41,7 @@ const SearchResults = () => {
           src={meal.strMealThumb}
           alt={meal.strMeal}
           width={300}
+          height={300}
           className="mb-4 w-full h-48 object-cover rounded-lg"
         />
         <p className="text-lg font-bold font-poppins text-black">{meal.strMeal}</p>

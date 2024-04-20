@@ -38,7 +38,7 @@ const RecipeCard = ({ meal, onClose }) => {
   };
 
   return (
-    <div className="w-full  bg-yellow p-8 relative flex flex-col justify-center items-center">
+    <div className="w-full  bg-yellow p-8  flex flex-col justify-center items-center">
       {/* Header section */}
       <span
         className="absolute top-0 left-0 m-4 text-3xl cursor-pointer"
