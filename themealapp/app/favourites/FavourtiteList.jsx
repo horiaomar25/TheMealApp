@@ -1,22 +1,39 @@
-import React from 'react';
-import Image from 'next/image';
+import React from "react";
+import RecipeCard from "../Categories/RecipeCard";
+import Image from "next/image";
 
-const FavourtiteList = ({ favourites }) => {
+const FavouritesPage = () => {
+  // Retrieve favorites from local storage
+  const favorites = JSON.parse(localStorage.getItem("favourites")) || [];
+
   return (
-    <section className=' m-4 rounded-xl '>
-
-      <div className="grid grid-cols-3 gap-4">
-        {favourites.map((favourite) => (
-          <div key={favourite.id} className=' rounded-xl flex flex-col p-6'>
-            <Image src={favourite.strMealThumb} alt={favourite.strMeal} className='w-11/12 border border-black ' width={100} height={50} />
-            <div className='bg-orange w-11/12'>
-              <h3 className='bg-orange text-xl font-semibold p-4 border border-black'>{favourite.strMeal}</h3>
+    <div className="container mx-auto py-8">
+      <h1 className="text-3xl font-bold mb-4">Favorite Recipes</h1>
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        {favorites.map((meal) => (
+          <>
+          <div class=" w-96 bg-base-100 shadow-xl" key={meal.id}>
+          <figure><Image
+          src={meal.strMealThumb}
+          alt="meal picture"
+          width={400}
+          height={100}
+          className="border-2 border-black rounded-lg"
+        /></figure>
+          <div class="card-body">
+            <h2 class="card-title">{meal.strMeal}</h2>
+            
+            <div class="card-actions justify-end">
+              <button class="btn btn-primary">Buy Now</button>
             </div>
           </div>
+        </div>
+    
+      </>
         ))}
       </div>
-    </section>
-  )
-}
+    </div>
+  );
+};
 
-export default FavourtiteList;
+export default FavouritesPage;

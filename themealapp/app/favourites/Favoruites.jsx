@@ -1,8 +1,7 @@
 "use client"
 import React, { useState, useEffect } from 'react';
-import FavourtiteList from './FavourtiteList';
-
-const Favoruites = () => {
+import FavouriteList from "./FavourtiteList"
+const Favourites = () => { // Corrected the component name
   const [favourites, setFavourites] = useState([]);
 
   useEffect(() => {
@@ -23,9 +22,10 @@ const Favoruites = () => {
   return (
     <section>
       <h1 className='font-poppins text-4xl font-bold m-4'>Favourites</h1>
-      <FavourtiteList favourites={favourites}/>
+      <FavouriteList favourites={favourites}/> {/* Corrected the component name */}
     </section>
   );
 }
 
-export default Favoruites;
+export default Favourites; // Corrected the export name
+

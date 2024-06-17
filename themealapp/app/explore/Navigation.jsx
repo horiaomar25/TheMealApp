@@ -69,6 +69,9 @@ const Navigation = () => {
                           <li className="hover:bg-orange hover:w-full hover:border rounded-md text-lg">
                           <Link href="/Categories">Catergories</Link> 
                           </li>
+                          <li className="hover:bg-orange hover:w-full hover:border rounded-md text-lg">
+                          <Link href="/favourites">Favourites</Link> 
+                          </li>
                       </ul>
                   </div>
               </div>
