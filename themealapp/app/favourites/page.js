@@ -1,7 +1,7 @@
 "use client"
 import Navigation from "../explore/Navigation"
 
-import FavouritesPage from "./FavourtiteList"
+import FavouritesPage from "./FavourtitePage"
 
 const page = () => {
   return (
