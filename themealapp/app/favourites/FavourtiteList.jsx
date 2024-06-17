@@ -1,5 +1,5 @@
 import React from "react";
-import RecipeCard from "../Categories/RecipeCard";
+
 import Image from "next/image";
 
 const FavouritesPage = () => {
