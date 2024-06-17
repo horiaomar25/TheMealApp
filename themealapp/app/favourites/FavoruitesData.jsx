@@ -1,7 +1,7 @@
 "use client"
 import React, { useState, useEffect } from 'react';
 import FavouritesPage from "./FavourtitePage"
-const Favourites = () => { // Corrected the component name
+const FavouritesData = () => { // Corrected the component name
   const [favourites, setFavourites] = useState([]);
 
   useEffect(() => {
@@ -27,5 +27,5 @@ const Favourites = () => { // Corrected the component name
   );
 }
 
-export default Favourites; // Corrected the export name
+export default FavouritesData; // Corrected the export name
 
