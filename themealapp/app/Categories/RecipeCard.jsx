@@ -20,13 +20,18 @@ const RecipeCard = ({ meal, onClose }) => {
     const measureKey = `strMeasure${i}`;
     if (meal[ingredientKey]) {
       const ingredient = `${meal[measureKey]} ${meal[ingredientKey]}`;
-      ingredients.push(ingredient);
+      ingredients.push({
+        name: meal[ingredientKey],
+        measure: meal[measureKey],
+        full: ingredient,
+      });
     } else {
       break; // Stop iterating if there are no more ingredients
     }
   }
 
-  const instructions = meal?.strInstructions?.split(".") || [];
+  // Split the instructions into an array and filter out empty strings
+  const instructions = meal?.strInstructions?.split(".").filter(instruction => instruction.trim() !== "") || [];
 
   const handleFavourite = () => {
     if (isFavourite) {
@@ -35,6 +40,10 @@ const RecipeCard = ({ meal, onClose }) => {
       setFavourites([...favourites, meal]);
     }
     setIsFavourite(!isFavourite);
+  };
+
+  const getIngredientImageUrl = (ingredient) => {
+    return `https://www.themealdb.com/images/ingredients/${ingredient}.png`;
   };
 
   return (
@@ -69,27 +78,33 @@ const RecipeCard = ({ meal, onClose }) => {
       {/* Ingredients and Instructions */}
       <div className="w-full p-4 rounded-lg flex flex-col md:flex-row items-start justify-center">
         <div className="w-full md:w-1/2 rounded-lg p-6 mr-6 mb-4 md:mb-0">
-          <h2 className="text-xl font-bold mb-4  text-black  ">Ingredients:</h2>
-          <div className="flex flex-wrap justify-between">
+          <h2 className="text-xl font-bold mb-4 text-black">Ingredients:</h2>
+          <div className="flex flex-col">
             {ingredients.map((ingredient, index) => (
-              <div key={index} className="w-1/2">
-                <ul className="space-y-2">
-                  <li className="flex items-center text-lg text-black">{ingredient}</li>
-                </ul>
+              <div key={index} className="flex items-center mb-2 hover:border hover:border-black">
+                <Image
+                  src={getIngredientImageUrl(ingredient.name)}
+                  alt={ingredient.name}
+                  width={70}
+                  height={70}
+                  className="border-2 border-black rounded-lg"
+                />
+                <span className="ml-4 text-lg text-black">
+                  {ingredient.full}
+                </span>
               </div>
             ))}
           </div>
         </div>
         <div className="w-full md:w-1/2">
           <h2 className="text-xl font-bold mb-4 md:mb-2 text-center text-black">Instructions:</h2>
-          {Array.from(
-            { length: Math.ceil(instructions.length / 3) },
-            (v, i) => i
-          ).map((index) => (
-            <p key={index} className="mb-2 text-black">
-              {instructions.slice(index * 3, index * 3 + 3).join(". ")}.
-            </p>
-          ))}
+          <ul className="pl-6">
+            {instructions.map((instruction, index) => (
+              <li key={index} className="mb-2 text-black border border-black rounded-lg p-4">
+                {instruction.trim() && instruction.trim() + "."}
+              </li>
+            ))}
+          </ul>
         </div>
       </div>
     </div>
@@ -97,5 +112,6 @@ const RecipeCard = ({ meal, onClose }) => {
 };
 
 export default RecipeCard;
+
 
 
