@@ -2,11 +2,9 @@
 import React, { useState } from "react";
 import SearchResults from "./SearchResults";
 import NewNav from "@/components/Navigation";
-import MealList from "../categories/MealList";
-
+import MealList from "../categories/MealList"; // Ensure this path is correct
 
 export default function Explore() {
-
   const [selectedCategory, setSelectedCategory] = useState("");
   const [showSearchResults, setShowSearchResults] = useState(false);
 
@@ -21,14 +19,12 @@ export default function Explore() {
 
   return (
     <>
-
       <NewNav />
       <SearchResults showResults={handleSearchResults} />
 
       {selectedCategory && !showSearchResults && (
         <MealList selectedCategory={selectedCategory} />
       )}
-
     </>
   );
 }
