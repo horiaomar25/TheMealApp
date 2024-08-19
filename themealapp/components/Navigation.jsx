@@ -69,7 +69,7 @@ const NewNav = () => {
         <ul className="menu menu-horizontal px-1">
           <li className='text-white text-xl font-semibold hover:text-blue-600'><Link href="/">Home</Link></li>
           <li className='text-white text-xl font-semibold hover:text-blue-600'><Link href="/explore">Explore</Link></li>
-          <li className='text-white text-xl font-semibold hover:text-blue-600'><Link href="/categories">Categories</Link></li>
+          <li className='text-white text-xl font-semibold hover:text-blue-600'><Link href="/Categories">Categories</Link></li>
           <li className='text-white text-xl font-semibold hover:text-blue-600'><Link href="/favourites">Favourites</Link></li>
         </ul>
       </div>
