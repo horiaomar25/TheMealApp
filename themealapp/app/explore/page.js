@@ -1,8 +1,8 @@
 "use client";
 import React, { useState } from "react";
 import SearchResults from "./SearchResults";
-import NewNav from "@/components/Navigation";
-import MealList from "../categories/MealList"; // Ensure this path is correct
+import NewNav from "@/Components/Navigation";
+import MealList from "../Categories/MealList"; // Ensure this path is correct
 
 export default function Explore() {
   const [selectedCategory, setSelectedCategory] = useState("");

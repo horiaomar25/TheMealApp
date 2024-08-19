@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import SearchInput from "./SearchInput";
-import RecipeCard from "../categories/RecipeCard"; // Import the RecipeCard component
+import RecipeCard from "../Categories/RecipeCard"; // Import the RecipeCard component
 import Image from "next/image";
 
 const SearchResults = () => {
