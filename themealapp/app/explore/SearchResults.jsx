@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import SearchInput from "./SearchInput";
-import RecipeCard from "../Categories/RecipeCard"; // Import the RecipeCard component
+import RecipeCard from "../categories/RecipeCard"; // Import the RecipeCard component
 import Image from "next/image";
 
 const SearchResults = () => {
@@ -52,7 +52,7 @@ const SearchResults = () => {
 
   return (
     <>
-      <section className="border border-black rounded-md m-4 bg-orange">
+      <section className="flex flex-col items-center justify-center w-full bg-orange text-black font-poppins">
         <div className="h-96 p-30 flex justify-center">
           <SearchInput setSearchResults={setSearchResults} setSearchValue={setSearchValue} /> {/* Pass setSearchValue */}
         </div>
@@ -60,8 +60,8 @@ const SearchResults = () => {
       </section>
       
       {searchResults.length > mealsPerPage && (
-        <div className="flex justify-center items-center">
-          <h2></h2>
+        <div className="flex justify-center items-center bg-yellow">
+         
 
           {Array.from({ length: Math.ceil(searchResults.length / mealsPerPage) }).map(
             (_, index) => (
@@ -83,7 +83,7 @@ const SearchResults = () => {
       )}
 
       {!selectedMeal && searchResults.length > 0 && (
-        <section className="m-8 grid grid-cols-1 sm:grid-cols-3 gap-4">
+        <section className="m-8 grid grid-cols-1 sm:grid-cols-3 gap-4 ">
           {renderMealCards()}
         </section>
       )}

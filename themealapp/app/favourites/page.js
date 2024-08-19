@@ -1,12 +1,12 @@
 "use client"
-import Navigation from "../explore/Navigation"
+import NewNav from "@/components/Navigation"
 
 import FavouritesPage from "./FavourtitePage"
 
 const page = () => {
   return (
     <>
- <Navigation/>
+<NewNav/>
 
  <FavouritesPage/>
  </>

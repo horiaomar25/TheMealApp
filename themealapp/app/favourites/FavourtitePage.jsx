@@ -32,10 +32,10 @@ const FavouritesPage = () => {
                   alt="meal picture"
                   width={400}
                   height={100}
-                  className="border-2 border-black rounded-lg"
+                  className=""
                 />
               </figure>
-              <div className="card-body">
+              <div className="card-body ">
                 <h2 className="card-title">{meal.strMeal}</h2>
                 <div className="card-actions justify-end">
                   <button className="btn btn-primary hover:bg-orange" onClick={() => setSelectedMeal(meal)}>See More</button>

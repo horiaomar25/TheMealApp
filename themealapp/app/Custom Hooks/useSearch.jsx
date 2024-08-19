@@ -23,7 +23,7 @@ const useSearch = () => {
     };
 
     fetchData();
-  }, []);
+  }, []); 
 
   return {};
 };

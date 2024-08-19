@@ -2,28 +2,24 @@
 import React, { useState } from "react";
 import Image from "next/image";
 
-const Categories = ({ categories, onSelectCategory }) => {
-  const [selectedCategory, setSelectedCategory] = useState(null);
-
-  const handleCategoryClick = (category) => {
-    onSelectCategory(category);
-    setSelectedCategory(category);
-  };
+const Categories = ({ categories, onSelectCategory, selectedCategory }) => {
+ 
 
   return (
     <>
+    <section className="flex flex-col items-center justify-center w-full bg-orange text-black font-poppins">
      <h2 className="text-4xl font-bold m-4 text-black">Categories</h2>
 
     
 
-      <section className="m-6 text-center grid grid-cols-1 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4 bg-yellow " >
+      <div className="m-6 text-center grid grid-cols-1 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4  " >
         {categories.map((category) => (
           <div
             key={category.idCategory}
-            className={`border-2 border-black hover:shadow-nav-shadow p-2 justify-center items-center cursor-pointer rounded-lg ${
-              selectedCategory === category.strCategory ? "bg-orange" : ""
+            className={`border-2 border-black  p-2 justify-center items-center cursor-pointer rounded-lg ${
+              selectedCategory === category.strCategory ? "bg-yellow" : ""
             }`}
-            onClick={() => handleCategoryClick(category.strCategory)}
+            onClick={() => onSelectCategory(category.strCategory)}
           >
             <div className="flex ">
             <Image
@@ -38,6 +34,7 @@ const Categories = ({ categories, onSelectCategory }) => {
             </div>
           </div>
         ))}
+      </div>
       </section>
     </>
   );

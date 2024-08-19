@@ -1,13 +1,11 @@
 "use client";
 import React, { useState } from "react";
 import SearchResults from "./SearchResults";
-import Navigation from "./Navigation";
-import MealList from "../Categories/MealList";
+import NewNav from "@/components/Navigation";
+import MealList from "../categories/MealList";
 
 
-
-
-export default function Home() {
+export default function Explore() {
 
   const [selectedCategory, setSelectedCategory] = useState("");
   const [showSearchResults, setShowSearchResults] = useState(false);
@@ -23,14 +21,14 @@ export default function Home() {
 
   return (
     <>
-   
-        <Navigation/>
-        <SearchResults showResults={handleSearchResults} />
-       
-        {selectedCategory && !showSearchResults && (
-          <MealList selectedCategory={selectedCategory} />
-        )}
-  
+
+      <NewNav />
+      <SearchResults showResults={handleSearchResults} />
+
+      {selectedCategory && !showSearchResults && (
+        <MealList selectedCategory={selectedCategory} />
+      )}
+
     </>
   );
 }

@@ -1,17 +1,15 @@
 "use client";
-import Navigation from "./explore/Navigation";
-import HeroSection from "./home/HeroSection";
-import LastestPicks from "./home/LastestPicks";
-
+import NewNav from "@/components/Navigation";
+import HeroSection from "../components/HeroSection";
+import LatestPicks from "../components/LastestPicks";
 
 
 export default function Home() {
   return (
     <>
-      <Navigation />
+     <NewNav/>
       <HeroSection />
-
-      <LastestPicks />
+      <LatestPicks/>
     </>
   );
 }

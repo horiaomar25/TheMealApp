@@ -6,9 +6,9 @@ const HeroSection = () => {
     <section className="flex flex-col items-center justify-center w-full bg-orange text-black font-poppins">
       <div className="  flex flex-col justify-center items-center p-10  ">
         <h1 className="text-black text-7xl text-center font-bold mt-8 font-Inter -tracking-tight">
-          The Meal{" "}
+         
           <span className="pb-4 font-extrabold -tracking-tight bg-clip-text text-transparent bg-yellow">
-            App
+           The Meal{" "}  App
           </span>
         </h1>
 
@@ -22,12 +22,13 @@ const HeroSection = () => {
           style={{ width: "50%", height: "auto" }} // Maintain aspect ratio
         />
 
-        <button className="bg-yellow border border-black w-48 p-2 rounded-xl">
-          Explore
-        </button>
+       
       </div>
     </section>
   );
 };
 
 export default HeroSection;
+
+
+
