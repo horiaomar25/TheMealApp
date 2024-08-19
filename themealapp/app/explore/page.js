@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import SearchResults from "./SearchResults";
-import NewNav from "@/Components/Navigation";
+import NewNav from "@/components/Navigation";
 import MealList from "../Categories/MealList"; // Ensure this path is correct
 
 export default function Explore() {
