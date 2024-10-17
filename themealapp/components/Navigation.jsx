@@ -52,7 +52,7 @@ const NewNav = () => {
                   <Link href="/search" className='text-2xl' >Explore</Link>
                 </li>
                 <li className='text-black text-4xl font-semibold mt-8' onClick={closeMenu}>
-                  <Link href="/quiz" className='text-2xl'>Catogories</Link>
+                  <Link href="/categories" className='text-2xl'>Catogories</Link>
                 </li>
                 <li className='text-black text-4xl font-semibold mt-8' onClick={closeMenu}>
                   <Link href="/quiz" className='text-2xl'>Favourites</Link>
@@ -69,12 +69,12 @@ const NewNav = () => {
         <ul className="menu menu-horizontal px-1">
           <li className='text-white text-xl font-semibold hover:text-blue-600'><Link href="/">Home</Link></li>
           <li className='text-white text-xl font-semibold hover:text-blue-600'><Link href="/explore">Explore</Link></li>
-          <li className='text-white text-xl font-semibold hover:text-blue-600'><Link href="/Categories">Categories</Link></li>
+          <li className='text-white text-xl font-semibold hover:text-blue-600'><Link href="/categories">Categories</Link></li>
           <li className='text-white text-xl font-semibold hover:text-blue-600'><Link href="/favourites">Favourites</Link></li>
         </ul>
       </div>
       <div className="navbar-end">
-        {/* Additional content can go here */}
+        
       </div>
     </div>
   )
