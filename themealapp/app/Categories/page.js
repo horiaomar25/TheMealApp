@@ -8,7 +8,7 @@ import MealList from "./MealList"
 import NewNav from "@/components/Navigation";
 
 
-export const CategoriesPage = () => {
+export default function Page () {
   // destructure the categories from the custom hook. This contains the data we need to display the categories.
   const { categories } = UseCategories();
   // create a state to keep track of the selected category
@@ -40,4 +40,4 @@ export const CategoriesPage = () => {
 };
 
 
-export default CategoriesPage;
+
