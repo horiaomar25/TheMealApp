@@ -55,7 +55,7 @@ const NewNav = () => {
                 <Link href="/categories" className='text-2xl'>Categories</Link>
                 </li>
                 <li className='text-black text-4xl font-semibold mt-8' onClick={closeMenu}>
-                  <Link href="/quiz" className='text-2xl'>Favourites</Link>
+                  <Link href="/favourites" className='text-2xl'>Favourites</Link>
                 </li>
               </ul>
             </div>
