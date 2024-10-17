@@ -52,7 +52,7 @@ const NewNav = () => {
                   <Link href="/search" className='text-2xl' >Explore</Link>
                 </li>
                 <li className='text-black text-4xl font-semibold mt-8' onClick={closeMenu}>
-                <Link href="/categories" className='text-2xl'>Catogories</Link>
+                <Link href="/categories" className='text-2xl'>Categories</Link>
                 </li>
                 <li className='text-black text-4xl font-semibold mt-8' onClick={closeMenu}>
                   <Link href="/quiz" className='text-2xl'>Favourites</Link>
